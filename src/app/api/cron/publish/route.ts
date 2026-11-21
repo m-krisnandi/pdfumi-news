@@ -30,7 +30,11 @@ export async function GET(request: Request) {
         title: "Intercontinental HVDC Supergrids: Dynamic Resilience and Zero-Loss Feasibility",
         institutionOrJournal: "Nature Energy Journal",
         year: 2026,
-        keyFinding: "Konektivitas transmisi arus searah tegangan ultra-tinggi antarbenua mampu menekan fluktuasi pasokan energi terbarukan hingga 88%.",
+        keyFinding: {
+          en: "Intercontinental ultra-high-voltage direct current grid connectivity reduces renewable energy intermittency by up to 88%.",
+          id: "Konektivitas transmisi arus searah tegangan ultra-tinggi antarbenua mampu menekan fluktuasi pasokan energi terbarukan hingga 88%.",
+          ja: "大陸間超高圧直流送電グリッドの接続により、再生可能エネルギーの供給変動が最大88%抑制されます。",
+        },
       },
     });
   }
