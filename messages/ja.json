@@ -10,6 +10,7 @@
     "backToPdfumi": "PDFumi ツールへ",
     "categories": "カテゴリー",
     "about": "当サイトについて",
+    "contact": "お問い合わせ",
     "editorial": "編集基準・ポリシー",
     "privacy": "プライバシーポリシー",
     "dashboard": "ダッシュボード"
@@ -110,9 +111,19 @@
     "feedbackError": "パイプラインの実行に失敗しました",
     "feedbackConnecting": "サーバーと通信中..."
   },
+  "adsense": {
+    "sponsor": "スポンサー",
+    "advertisement": "広告",
+    "reservedArea": "Google AdSense 広告枠",
+    "zeroCls": "レイアウト崩れ防止コンテナ (Zero CLS)"
+  },
   "footer": {
     "copyright": "Pdfumi News Network. 無断転載を禁じます。",
     "disclaimer": "国際的な教養・認識向上のために配信しています。すべての引用およびデータには検証可能な情報源を明記しています。",
-    "mainTools": "PDFumi メインツールへ戻る"
+    "mainTools": "PDFumi メインツールへ戻る",
+    "about": "当サイトについて",
+    "contact": "お問い合わせ",
+    "editorial": "編集基準・ポリシー",
+    "privacy": "プライバシーポリシー"
   }
 }

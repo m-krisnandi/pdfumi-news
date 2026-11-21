@@ -10,6 +10,7 @@
     "backToPdfumi": "PDFumi Tools",
     "categories": "Categories",
     "about": "About Us",
+    "contact": "Contact",
     "editorial": "Editorial Guidelines",
     "privacy": "Privacy Policy",
     "dashboard": "Dashboard"
@@ -110,9 +111,19 @@
     "feedbackError": "Failed to trigger pipeline",
     "feedbackConnecting": "Connecting to server..."
   },
+  "adsense": {
+    "sponsor": "Sponsor",
+    "advertisement": "Advertisement",
+    "reservedArea": "Google AdSense Reserved Area",
+    "zeroCls": "Zero CLS Reserved Container"
+  },
   "footer": {
     "copyright": "Pdfumi News Network. All rights reserved.",
     "disclaimer": "Reporting curated for educational and global awareness. All factual quotes and datasets provide verifiable citations.",
-    "mainTools": "Return to Main PDF Tools"
+    "mainTools": "Return to Main PDF Tools",
+    "about": "About Us",
+    "contact": "Contact",
+    "editorial": "Editorial Guidelines",
+    "privacy": "Privacy Policy"
   }
 }

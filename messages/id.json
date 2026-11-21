@@ -10,6 +10,7 @@
     "backToPdfumi": "Alat PDFumi",
     "categories": "Kategori",
     "about": "Tentang Kami",
+    "contact": "Kontak",
     "editorial": "Pedoman Editorial",
     "privacy": "Kebijakan Privasi",
     "dashboard": "Dashboard"
@@ -110,9 +111,19 @@
     "feedbackError": "Gagal menjalankan siklus berita",
     "feedbackConnecting": "Menghubungi server..."
   },
+  "adsense": {
+    "sponsor": "Sponsor",
+    "advertisement": "Iklan",
+    "reservedArea": "Area Iklan Google AdSense",
+    "zeroCls": "Kontainer Khusus Iklan (Bebas CLS)"
+  },
   "footer": {
     "copyright": "Jaringan Berita Pdfumi. Hak Cipta Dilindungi.",
     "disclaimer": "Pemberitaan ditujukan untuk edukasi dan wawasan global. Seluruh kutipan dan data mencantumkan atribusi sumber asli.",
-    "mainTools": "Kembali ke Konverter PDFumi"
+    "mainTools": "Kembali ke Konverter PDFumi",
+    "about": "Tentang Kami",
+    "contact": "Kontak",
+    "editorial": "Pedoman Editorial",
+    "privacy": "Kebijakan Privasi"
   }
 }

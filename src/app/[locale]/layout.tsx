@@ -51,9 +51,14 @@ export default async function LocaleLayout({
           </main>
           <Footer
             locale={locale as Locale}
+            tagline={tMeta("tagline")}
             copyrightText={tFooter("copyright")}
             disclaimerText={tFooter("disclaimer")}
             mainToolsText={tFooter("mainTools")}
+            aboutText={tFooter("about")}
+            contactText={tFooter("contact")}
+            editorialText={tFooter("editorial")}
+            privacyText={tFooter("privacy")}
           />
         </NextIntlClientProvider>
       </body>

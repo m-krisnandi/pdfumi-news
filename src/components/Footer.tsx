@@ -6,11 +6,21 @@ export function Footer({
   copyrightText,
   disclaimerText,
   mainToolsText,
+  tagline,
+  aboutText,
+  contactText,
+  editorialText,
+  privacyText,
 }: {
   locale: Locale;
   copyrightText: string;
   disclaimerText: string;
   mainToolsText: string;
+  tagline: string;
+  aboutText: string;
+  contactText: string;
+  editorialText: string;
+  privacyText: string;
 }) {
   return (
     <footer className="mt-20 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-12">
@@ -25,7 +35,7 @@ export function Footer({
                 PDFumi Global News
               </span>
               <p className="text-xs text-zinc-500">
-                Ethical Multi-Source Journalism &amp; Verified Scientific Insights
+                {tagline}
               </p>
             </div>
           </div>
@@ -41,16 +51,16 @@ export function Footer({
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
             <a href={`https://pdfumi.com/${locale}/about`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
-              About
+              {aboutText}
             </a>
             <a href={`https://pdfumi.com/${locale}/contact`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
-              Contact
+              {contactText}
             </a>
             <a href={`https://pdfumi.com/${locale}/editorial-guidelines`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
-              Editorial Guidelines
+              {editorialText}
             </a>
             <a href={`https://pdfumi.com/${locale}/privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
-              Privacy
+              {privacyText}
             </a>
           </div>
         </div>
