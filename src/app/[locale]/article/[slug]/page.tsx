@@ -8,7 +8,8 @@ import { SourceVerificationBox } from "@/components/SourceVerificationBox";
 import { ResearchStudyBox } from "@/components/ResearchStudyBox";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
 import { ArticleCard } from "@/components/ArticleCard";
-import { Clock, Eye, Calendar, ArrowLeft, Share2 } from "lucide-react";
+import { ShareButton } from "@/components/ShareButton";
+import { Clock, Calendar, ArrowLeft, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -76,6 +77,8 @@ export default async function ArticlePage({
   const categoryMeta = CATEGORIES_META[article.category];
   const catName = categoryMeta ? (categoryMeta.name[locale as Locale] || categoryMeta.name.en) : article.category;
 
+  const copiedNotification = locale === "id" ? "Tautan Tersalin!" : locale === "ja" ? "リンクをコピーしました！" : "Link Copied!";
+
   // JSON-LD NewsArticle Structured Data for Google News and SEO
   const jsonLd = {
     "@context": "https://schema.org",
@@ -140,7 +143,7 @@ export default async function ArticlePage({
           <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-y border-zinc-200 dark:border-zinc-800 py-3 text-xs text-zinc-500">
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
-                <Calendar className="h-3.5 w-3.5 text-teal-600" />
+                <Calendar className="h-3.5 w-3.5 text-teal-600 dark:text-teal-400" />
                 <span>
                   {new Date(article.publishedAt || article.createdAt).toLocaleDateString(
                     locale === "id" ? "id-ID" : locale === "ja" ? "ja-JP" : "en-US",
@@ -149,24 +152,20 @@ export default async function ArticlePage({
                 </span>
               </span>
               <span className="flex items-center gap-1.5">
-                <Clock className="h-3.5 w-3.5 text-teal-600" />
+                <Clock className="h-3.5 w-3.5 text-teal-600 dark:text-teal-400" />
                 <span>{content.readingTimeMinutes} {tHome("minRead")}</span>
               </span>
-              <span className="flex items-center gap-1.5">
-                <Eye className="h-3.5 w-3.5 text-teal-600" />
-                <span>{article.viewCount} views</span>
+              <span className="flex items-center gap-1.5 text-teal-600 dark:text-teal-400 font-medium">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                <span>{article.sources.length} {tHome("sourcesUnit")}</span>
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                className="flex items-center gap-1 rounded-lg border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 text-xs hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
-              >
-                <Share2 className="h-3.5 w-3.5 text-teal-600" />
-                <span>{t("share")}</span>
-              </button>
-            </div>
+            <ShareButton
+              title={content.title}
+              shareText={t("share")}
+              copiedText={copiedNotification}
+            />
           </div>
         </header>
 
@@ -191,9 +190,6 @@ export default async function ArticlePage({
             </figcaption>
           )}
         </figure>
-
-        {/* Top Story AdSense Slot */}
-        <AdSensePlaceholder slotId="article-top-leaderboard" format="leaderboard" />
 
         {/* Main Body Content */}
         <div className="prose dark:prose-invert max-w-none text-zinc-800 dark:text-zinc-200 text-sm sm:text-base leading-relaxed space-y-6">
@@ -247,7 +243,7 @@ export default async function ArticlePage({
           ))}
         </div>
 
-        {/* Bottom AdSense Banner */}
+        {/* Bottom In-Article AdSense Banner (Non-Intrusive) */}
         <AdSensePlaceholder slotId="article-bottom-banner" format="in-article" />
 
         {/* Related Stories */}

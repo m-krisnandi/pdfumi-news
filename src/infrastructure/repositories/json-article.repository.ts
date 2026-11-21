@@ -69,6 +69,20 @@ export class JsonArticleRepository implements IArticleRepository {
     } else {
       this.articles.unshift(article);
     }
+
+    try {
+      if (typeof window === "undefined") {
+        const fs = await import("fs");
+        const path = await import("path");
+        const filePath = path.join(process.cwd(), "src/infrastructure/data/articles.json");
+        if (fs.existsSync(filePath)) {
+          fs.writeFileSync(filePath, JSON.stringify(this.articles, null, 2), "utf8");
+        }
+      }
+    } catch {
+      // In standalone container, filesystem write is optional
+    }
+
     return article;
   }
 

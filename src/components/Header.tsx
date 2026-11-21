@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { Locale } from "@/i18n/config";
 import { LanguageSelector } from "./LanguageSelector";
+import { ThemeToggle } from "./ThemeToggle";
 import { CATEGORIES_META, ArticleCategory } from "@/domain/entities/article";
 import { Newspaper, ArrowLeft, TrendingUp, Cpu, HeartPulse, Globe2, BookOpenCheck } from "lucide-react";
 
@@ -71,8 +72,9 @@ export function Header({
           })}
         </nav>
 
-        {/* Right Language & Tools Link */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Right Language, Theme & Tools Link */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <ThemeToggle />
           <LanguageSelector currentLocale={locale} />
           <a
             href={`https://pdfumi.com/${locale}`}

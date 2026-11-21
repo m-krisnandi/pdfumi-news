@@ -16,7 +16,7 @@
         "name": "MIT Technology Review",
         "url": "https://technologyreview.com",
         "publisher": "MIT Press",
-        "publishedAt": "2026-11-19T14:00:00Z",
+        "publishedAt": "2026-11-21T01:00:00Z",
         "isPrimary": true,
         "credibilityScore": 98
       },
@@ -24,7 +24,7 @@
         "name": "Reuters Global Technology",
         "url": "https://reuters.com/technology",
         "publisher": "Thomson Reuters",
-        "publishedAt": "2026-11-20T02:30:00Z",
+        "publishedAt": "2026-11-21T03:30:00Z",
         "isPrimary": false,
         "credibilityScore": 96
       },
@@ -32,7 +32,7 @@
         "name": "NHK World News Tech",
         "url": "https://www3.nhk.or.jp/nhkworld/en/news/",
         "publisher": "NHK Japan",
-        "publishedAt": "2026-11-20T08:15:00Z",
+        "publishedAt": "2026-11-21T06:15:00Z",
         "isPrimary": false,
         "credibilityScore": 95
       }
@@ -79,11 +79,11 @@
         "readingTimeMinutes": 4
       }
     },
-    "scheduledAt": "2026-11-20T07:00:00Z",
-    "publishedAt": "2026-11-20T07:00:00Z",
-    "viewCount": 3840,
-    "createdAt": "2026-11-20T06:30:00Z",
-    "updatedAt": "2026-11-20T07:00:00Z"
+    "scheduledAt": "2026-11-21T07:00:00Z",
+    "publishedAt": "2026-11-21T07:00:00Z",
+    "viewCount": 0,
+    "createdAt": "2026-11-21T06:30:00Z",
+    "updatedAt": "2026-11-21T07:00:00Z"
   },
   {
     "id": "art-002",
@@ -102,7 +102,7 @@
         "name": "The Lancet Healthy Longevity",
         "url": "https://thelancet.com/healthy-longevity",
         "publisher": "Elsevier",
-        "publishedAt": "2026-11-18T10:00:00Z",
+        "publishedAt": "2026-11-21T02:00:00Z",
         "isPrimary": true,
         "credibilityScore": 99
       },
@@ -110,7 +110,7 @@
         "name": "World Health Organization (WHO) Bulletin",
         "url": "https://who.int",
         "publisher": "United Nations",
-        "publishedAt": "2026-11-19T06:00:00Z",
+        "publishedAt": "2026-11-21T04:00:00Z",
         "isPrimary": false,
         "credibilityScore": 97
       },
@@ -118,7 +118,7 @@
         "name": "PubMed Central Clinical Trials",
         "url": "https://ncbi.nlm.nih.gov/pmc",
         "publisher": "National Institutes of Health",
-        "publishedAt": "2026-11-19T12:00:00Z",
+        "publishedAt": "2026-11-21T05:00:00Z",
         "isPrimary": false,
         "credibilityScore": 99
       }
@@ -165,11 +165,11 @@
         "readingTimeMinutes": 5
       }
     },
-    "scheduledAt": "2026-11-20T12:30:00Z",
-    "publishedAt": "2026-11-20T12:30:00Z",
-    "viewCount": 5120,
-    "createdAt": "2026-11-20T11:45:00Z",
-    "updatedAt": "2026-11-20T12:30:00Z"
+    "scheduledAt": "2026-11-21T05:00:00Z",
+    "publishedAt": "2026-11-21T05:00:00Z",
+    "viewCount": 0,
+    "createdAt": "2026-11-21T04:45:00Z",
+    "updatedAt": "2026-11-21T05:00:00Z"
   },
   {
     "id": "art-003",
@@ -188,7 +188,7 @@
         "name": "Financial Times",
         "url": "https://ft.com",
         "publisher": "Nikkei Group",
-        "publishedAt": "2026-11-20T04:00:00Z",
+        "publishedAt": "2026-11-21T00:30:00Z",
         "isPrimary": true,
         "credibilityScore": 97
       },
@@ -196,7 +196,7 @@
         "name": "Bank for International Settlements (BIS) Quarterly",
         "url": "https://bis.org",
         "publisher": "BIS Basel",
-        "publishedAt": "2026-11-19T18:00:00Z",
+        "publishedAt": "2026-11-20T22:00:00Z",
         "isPrimary": false,
         "credibilityScore": 99
       }
@@ -230,10 +230,10 @@
         "readingTimeMinutes": 3
       }
     },
-    "scheduledAt": "2026-11-20T19:30:00Z",
-    "publishedAt": "2026-11-20T19:30:00Z",
-    "viewCount": 2980,
-    "createdAt": "2026-11-20T18:00:00Z",
-    "updatedAt": "2026-11-20T19:30:00Z"
+    "scheduledAt": "2026-11-21T01:00:00Z",
+    "publishedAt": "2026-11-21T01:00:00Z",
+    "viewCount": 0,
+    "createdAt": "2026-11-21T00:30:00Z",
+    "updatedAt": "2026-11-21T01:00:00Z"
   }
 ]

@@ -4,7 +4,7 @@ import { articleRepository } from "@/infrastructure/repositories/json-article.re
 import { GetNewsUseCase } from "@/application/use-cases/get-news.usecase";
 import { ArticleCard } from "@/components/ArticleCard";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
-import { Flame, BookOpen, Clock } from "lucide-react";
+import { Flame, BookOpen, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -56,12 +56,16 @@ export default async function HomePage({
 
   return (
     <div className="space-y-10 sm:space-y-12">
-      {/* Top Banner AdSense Slot */}
-      <AdSensePlaceholder slotId="home-top-leaderboard" format="leaderboard" />
-
-      {/* Lead Story Hero Layout */}
+      {/* Lead Story Hero Layout — Entire Card Clickable */}
       {leadArticle && (
-        <section className="grid gap-8 lg:grid-cols-12 items-center rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-6 sm:p-8 overflow-hidden shadow-xs">
+        <section className="group relative grid gap-8 lg:grid-cols-12 items-center rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-6 sm:p-8 overflow-hidden shadow-xs hover:shadow-md hover:border-teal-500/40 transition-all cursor-pointer">
+          {/* Full-Card Clickable Link Overlay */}
+          <Link
+            href={`/article/${leadArticle.slug}`}
+            className="absolute inset-0 z-10"
+            aria-label={leadContent.title}
+          />
+
           <div className="lg:col-span-7 space-y-4">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-bold text-red-600 dark:text-red-400">
@@ -74,10 +78,8 @@ export default async function HomePage({
               </span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight">
-              <Link href={`/article/${leadArticle.slug}`} className="hover:text-teal-600 dark:hover:text-teal-400 transition">
-                {leadContent.title}
-              </Link>
+            <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+              {leadContent.title}
             </h1>
 
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
@@ -95,13 +97,10 @@ export default async function HomePage({
                   <span>{t("studyIncluded")}</span>
                 </span>
               )}
-              <Link
-                href={`/article/${leadArticle.slug}`}
-                className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 text-xs font-bold transition shadow-xs"
-              >
+              <span className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-teal-600 group-hover:bg-teal-700 text-white px-4 py-2 text-xs font-bold transition shadow-xs">
                 <span>{t("readArticle")}</span>
-                <span>→</span>
-              </Link>
+                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </div>
           </div>
 
@@ -111,7 +110,7 @@ export default async function HomePage({
               alt={leadArticle.coverImage.alt}
               fill
               priority
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
@@ -144,7 +143,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Mid Feed In-Article AdSense Slot */}
+      {/* Mid Feed In-Article AdSense Slot (Non-Intrusive) */}
       <AdSensePlaceholder slotId="home-mid-inarticle" format="in-article" />
     </div>
   );
