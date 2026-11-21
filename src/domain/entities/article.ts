@@ -22,11 +22,11 @@ export interface ResearchCitation {
   institutionOrJournal: string; // e.g. "Nature Medicine", "Lancet", "MIT Media Lab"
   year: number;
   url?: string;
-  keyFinding: string;
+  keyFinding: string | { id: string; en: string; ja: string };
   contextualWisdom?: {
-    text: string;
-    source: string; // e.g. "QS. An-Nahl: 69" or "Hippocrates Aphorisms"
-    reflection: string;
+    text: string | { id: string; en: string; ja: string };
+    source: string | { id: string; en: string; ja: string };
+    reflection: string | { id: string; en: string; ja: string };
   };
 }
 
@@ -49,7 +49,7 @@ export interface Article {
   coverImage: {
     url: string;
     alt: string;
-    caption?: string;
+    caption?: string | { id: string; en: string; ja: string };
     credit?: string;
   };
   sources: SourceReference[];

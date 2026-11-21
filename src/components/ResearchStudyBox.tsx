@@ -1,19 +1,35 @@
 import { ResearchCitation } from "@/domain/entities/article";
+import { Locale } from "@/i18n/config";
 import { BookOpen, Sparkles } from "lucide-react";
 
 export function ResearchStudyBox({
   study,
+  locale,
   titleText,
   descText,
   wisdomTitle,
   keyFindingLabel,
 }: {
   study: ResearchCitation;
+  locale: Locale;
   titleText: string;
   descText: string;
   wisdomTitle: string;
   keyFindingLabel?: string;
 }) {
+  const resolveField = (
+    field: string | { id: string; en: string; ja: string } | undefined
+  ): string => {
+    if (!field) return "";
+    if (typeof field === "string") return field;
+    return field[locale] || field.en || "";
+  };
+
+  const keyFindingText = resolveField(study.keyFinding);
+  const wisdomText = resolveField(study.contextualWisdom?.text);
+  const wisdomSource = resolveField(study.contextualWisdom?.source);
+  const wisdomReflection = resolveField(study.contextualWisdom?.reflection);
+
   return (
     <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-5 sm:p-6 my-8 space-y-5">
       <div>
@@ -40,26 +56,30 @@ export function ResearchStudyBox({
           )}
           <div className="border-t border-zinc-100 dark:border-zinc-800/80 pt-2 text-xs text-zinc-700 dark:text-zinc-300 font-medium">
             <span className="font-bold text-indigo-600 dark:text-indigo-400">{keyFindingLabel || "Key Finding:"} </span>
-            {study.keyFinding}
+            {keyFindingText}
           </div>
         </div>
       </div>
 
-      {study.contextualWisdom && (
+      {study.contextualWisdom && wisdomText && (
         <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-4 relative overflow-hidden">
           <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300 font-bold text-xs mb-1.5">
             <Sparkles className="h-4 w-4 text-amber-600" />
             <span>{wisdomTitle}</span>
           </div>
           <blockquote className="text-xs italic text-zinc-800 dark:text-zinc-200 pl-3 border-l-2 border-amber-500/60 my-2">
-            &quot;{study.contextualWisdom.text}&quot;
-            <span className="block text-[11px] font-semibold text-amber-700 dark:text-amber-400 not-italic mt-1">
-              — {study.contextualWisdom.source}
-            </span>
+            &quot;{wisdomText}&quot;
+            {wisdomSource && (
+              <span className="block text-[11px] font-semibold text-amber-700 dark:text-amber-400 not-italic mt-1">
+                — {wisdomSource}
+              </span>
+            )}
           </blockquote>
-          <p className="text-[11px] text-zinc-600 dark:text-zinc-400 mt-2">
-            {study.contextualWisdom.reflection}
-          </p>
+          {wisdomReflection && (
+            <p className="text-[11px] text-zinc-600 dark:text-zinc-400 mt-2">
+              {wisdomReflection}
+            </p>
+          )}
         </div>
       )}
     </div>

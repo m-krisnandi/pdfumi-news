@@ -77,6 +77,11 @@ export default async function ArticlePage({
   const categoryMeta = CATEGORIES_META[article.category];
   const catName = categoryMeta ? (categoryMeta.name[locale as Locale] || categoryMeta.name.en) : article.category;
 
+  const captionText =
+    typeof article.coverImage.caption === "object"
+      ? article.coverImage.caption[locale as Locale] || article.coverImage.caption.en
+      : article.coverImage.caption;
+
   const copiedNotification = locale === "id" ? "Tautan Tersalin!" : locale === "ja" ? "リンクをコピーしました！" : "Link Copied!";
 
   // JSON-LD NewsArticle Structured Data for Google News and SEO
@@ -181,9 +186,9 @@ export default async function ArticlePage({
               className="object-cover"
             />
           </div>
-          {article.coverImage.caption && (
+          {captionText && (
             <figcaption className="text-center text-xs text-zinc-500">
-              {article.coverImage.caption}{" "}
+              {captionText}{" "}
               {article.coverImage.credit && (
                 <span className="text-zinc-400">({article.coverImage.credit})</span>
               )}
@@ -216,6 +221,7 @@ export default async function ArticlePage({
         {article.researchStudy && (
           <ResearchStudyBox
             study={article.researchStudy}
+            locale={locale as Locale}
             titleText={t("scientificStudy")}
             descText={t("scientificStudyDesc")}
             wisdomTitle={t("wisdomTitle")}

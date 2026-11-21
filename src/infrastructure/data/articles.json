@@ -8,7 +8,11 @@
     "coverImage": {
       "url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "alt": "Quantum Processing Unit Architecture",
-      "caption": "Silikon Quantum AI Generasi Baru dalam Uji Laboratorium Terbuka",
+      "caption": {
+        "en": "Next-Generation Quantum-Silicon Hybrid Processor in Public Lab Trials",
+        "id": "Silikon Quantum AI Generasi Baru dalam Uji Laboratorium Terbuka",
+        "ja": "次世代量子ハイブリッドシリコンプロセッサの実証実験"
+      },
       "credit": "Science Photo Lab / Unsplash"
     },
     "sources": [
@@ -43,11 +47,27 @@
       "institutionOrJournal": "Nature Quantum Information & RIKEN Institute",
       "year": 2026,
       "url": "https://nature.com",
-      "keyFinding": "Efisiensi komputasi neural network melonjak 320x lipat dengan konsumsi daya listrik 90% lebih rendah dibanding akselerator AI konvensional berbasis HBM.",
+      "keyFinding": {
+        "en": "Neural network compute efficiency surged by 320x with 90% lower power draw compared to conventional HBM-based AI accelerators.",
+        "id": "Efisiensi komputasi neural network melonjak 320x lipat dengan konsumsi daya listrik 90% lebih rendah dibanding akselerator AI konvensional berbasis HBM.",
+        "ja": "従来のHBM搭載AIアクセラレータと比較して、消費電力を90%削減しながらニューラルネットワーク演算効率が320倍に向上しました。"
+      },
       "contextualWisdom": {
-        "text": "Dan Dia mengajarkan kepada manusia apa yang tidak diketahuinya.",
-        "source": "QS. Al-'Alaq: 5",
-        "reflection": "Kemajuan sains membuktikan potensi akal manusia dalam membuka tabir hukum alam semesta demi kemaslahatan bersama."
+        "text": {
+          "en": "And He taught man that which he knew not.",
+          "id": "Dan Dia mengajarkan kepada manusia apa yang tidak diketahuinya.",
+          "ja": "そして人間に対し、かつて知らなかったことを教え給うた。"
+        },
+        "source": {
+          "en": "The Quran, Surah Al-'Alaq: 5",
+          "id": "QS. Al-'Alaq: 5",
+          "ja": "クルアーン（凝血章）96章5節"
+        },
+        "reflection": {
+          "en": "Scientific breakthroughs affirm the boundless human capacity to unlock cosmic principles for the collective advancement of society.",
+          "id": "Kemajuan sains membuktikan potensi akal manusia dalam membuka tabir hukum alam semesta demi kemaslahatan bersama.",
+          "ja": "科学的知見の進化は、普遍的な自然の摂理を解き明かし人類社会の持続的繁栄に資する人間の知性の証です。"
+        }
       }
     },
     "translations": {
@@ -94,7 +114,11 @@
     "coverImage": {
       "url": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
       "alt": "Wellness and Cellular Vitality",
-      "caption": "Mekanisme Pembersihan Seluler (Autophagy) dalam Gaya Hidup Seimbang",
+      "caption": {
+        "en": "Cellular Autophagic Clearance Mechanisms Under Balanced Lifestyle Protocols",
+        "id": "Mekanisme Pembersihan Seluler (Autophagy) dalam Gaya Hidup Seimbang",
+        "ja": "生活習慣と細胞オートファジー（自食作用）による若返り機構"
+      },
       "credit": "Health Vitality / Unsplash"
     },
     "sources": [
@@ -129,11 +153,27 @@
       "institutionOrJournal": "The Lancet Healthy Longevity & Karolinska Institute",
       "year": 2026,
       "url": "https://thelancet.com",
-      "keyFinding": "Pola puasa teratur 14-16 jam menurunkan penanda inflamasi sistemik (hs-CRP) sebesar 42% dan meningkatkan daur ulang mitokondria yang rusak (mitofagi).",
+      "keyFinding": {
+        "en": "Regular 14-16 hour time-restricted feeding lowered systemic inflammatory markers (hs-CRP) by 42% and significantly accelerated the autophagic recycling of damaged mitochondria.",
+        "id": "Pola puasa teratur 14-16 jam menurunkan penanda inflamasi sistemik (hs-CRP) sebesar 42% dan meningkatkan daur ulang mitokondria yang rusak (mitofagi).",
+        "ja": "14〜16時間の定期的なファスティング（時間制限摂食）により、全身の炎症マーカー（hs-CRP）が42%低減し、機能不全に陥ったミトコンドリアの自食再循環が活性化しました。"
+      },
       "contextualWisdom": {
-        "text": "Dan berpuasa itu lebih baik bagimu jika kamu mengetahui.",
-        "source": "QS. Al-Baqarah: 184",
-        "reflection": "Ajaran berpuasa yang telah diwariskan ribuan tahun terbukti selaras dengan mekanisme biologis pemulihan seluler tubuh manusia."
+        "text": {
+          "en": "And that you fast is better for you, if only you knew.",
+          "id": "Dan berpuasa itu lebih baik bagimu jika kamu mengetahui.",
+          "ja": "もしあなたがたが理解するならば、断食を行うことこそがあなたがたにとって最善である。"
+        },
+        "source": {
+          "en": "The Quran, Surah Al-Baqarah: 184",
+          "id": "QS. Al-Baqarah: 184",
+          "ja": "クルアーン（雌牛章）2章184節"
+        },
+        "reflection": {
+          "en": "Ancient spiritual practices transmitted across millennia mirror modern biological discoveries regarding cellular rejuvenation and metabolic balance.",
+          "id": "Ajaran berpuasa yang telah diwariskan ribuan tahun terbukti selaras dengan mekanisme biologis pemulihan seluler tubuh manusia.",
+          "ja": "何世紀にもわたり継承されてきた伝統的な断食の知恵が、最新の分子生物学が解明する生体防御機構と完全に調和しています。"
+        }
       }
     },
     "translations": {
@@ -180,7 +220,11 @@
     "coverImage": {
       "url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
       "alt": "Global Financial Interconnection",
-      "caption": "Infrastruktur Pembayaran Antarnegara Tanpa Hambatan",
+      "caption": {
+        "en": "Frictionless Real-Time Cross-Border Settlement Infrastructure",
+        "id": "Infrastruktur Pembayaran Antarnegara Tanpa Hambatan",
+        "ja": "手数料を抑えた即時クロスボーダー決済インフラ網"
+      },
       "credit": "Fintech Today / Unsplash"
     },
     "sources": [
