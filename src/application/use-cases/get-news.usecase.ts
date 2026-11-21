@@ -24,7 +24,8 @@ export class GetNewsUseCase {
     }
 
     const related = await this.articleRepo.getRelatedArticles(article.id, article.category, 3);
-    await this.articleRepo.incrementViewCount(article.id);
+    // Note: View count is NOT incremented here on server read.
+    // Real authentic readership is tracked strictly client-side via ViewTracker & /api/views
 
     return { article, related };
   }
