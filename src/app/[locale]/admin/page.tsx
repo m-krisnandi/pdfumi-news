@@ -1,9 +1,11 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { cookies } from "next/headers";
 import { Locale } from "@/i18n/config";
 import { articleRepository } from "@/infrastructure/repositories/json-article.repository";
 import { CATEGORIES_META } from "@/domain/entities/article";
 import { PUBLISHING_SLOTS } from "@/application/use-cases/publish-scheduler.usecase";
 import { DashboardOperations } from "@/components/DashboardOperations";
+import { AdminLoginForm } from "@/components/AdminLoginForm";
 import { Link } from "@/i18n/navigation";
 import {
   Eye,
@@ -15,30 +17,37 @@ import {
   BookOpenCheck,
   Layers,
   Sparkles,
+  ShieldAlert,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "dashboard" });
+export async function generateMetadata() {
   return {
-    title: `${t("title")} — Pdfumi News`,
-    description: t("subtitle"),
+    title: "Admin Operations & Analytics Hub — Pdfumi News",
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 
-export default async function DashboardPage({
+export default async function AdminDashboardPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  // Authentication Check
+  const cookieStore = await cookies();
+  const session = cookieStore.get("pdfumi_admin_session");
+  const isAuthenticated = session?.value === "authenticated";
+
+  if (!isAuthenticated) {
+    return <AdminLoginForm />;
+  }
 
   const t = await getTranslations({ locale, namespace: "dashboard" });
   const articles = await articleRepository.getAllArticles();
@@ -69,7 +78,8 @@ export default async function DashboardPage({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
             </span>
-            <span>{t("badge")}</span>
+            <ShieldAlert className="h-3.5 w-3.5" />
+            <span>Pusat Kendali Admin Redaksi (Restricted Access)</span>
           </div>
           <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
             {t("title")}
@@ -217,7 +227,7 @@ export default async function DashboardPage({
               {articles.map((art) => {
                 const tr = art.translations[locale as Locale] || art.translations.en;
                 const catMeta = CATEGORIES_META[art.category];
-                const catName = catMeta ? catMeta.name[locale as Locale] || catMeta.name.en : art.category;
+                const catName = catMeta ? (catMeta.name[locale as Locale] || catMeta.name.en) : art.category;
 
                 return (
                   <tr key={art.id} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition">

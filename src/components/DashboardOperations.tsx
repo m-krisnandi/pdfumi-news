@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Sparkles, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Sparkles, Send, Loader2, CheckCircle2, LogOut } from "lucide-react";
 
 export function DashboardOperations({
   runHarvestText,
@@ -45,6 +45,22 @@ export function DashboardOperations({
     }
   };
 
+  const handleLogout = async () => {
+    setLoading("logout");
+    try {
+      await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "logout" }),
+      });
+      router.refresh();
+    } catch {
+      // Ignore
+    } finally {
+      setLoading(null);
+    }
+  };
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3">
@@ -72,6 +88,16 @@ export function DashboardOperations({
             <Send className="h-3.5 w-3.5" />
           )}
           <span>{publishDueText}</span>
+        </button>
+
+        <button
+          onClick={handleLogout}
+          disabled={loading !== null}
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-semibold text-xs transition disabled:opacity-50 cursor-pointer"
+          title="Keluar dari sesi Admin"
+        >
+          <LogOut className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">Logout</span>
         </button>
       </div>
 

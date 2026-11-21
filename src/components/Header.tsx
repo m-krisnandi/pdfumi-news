@@ -11,7 +11,6 @@ import {
   HeartPulse,
   Globe2,
   BookOpenCheck,
-  BarChart2,
 } from "lucide-react";
 
 const CATEGORY_ICONS: Record<ArticleCategory, typeof Cpu> = {
@@ -39,9 +38,6 @@ export function Header({
   tagline: string;
   backText: string;
 }) {
-  const dashboardLabel =
-    locale === "id" ? "Dashboard" : locale === "ja" ? "ダッシュボード" : "Dashboard";
-
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
@@ -84,17 +80,8 @@ export function Header({
           })}
         </nav>
 
-        {/* Right Dashboard, Language, Theme & Tools Link */}
+        {/* Right Language, Theme & Tools Link */}
         <div className="flex items-center gap-2 sm:gap-2.5">
-          <Link
-            href="/dashboard"
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500/30 transition shadow-2xs"
-            title="Editorial Intelligence & Traffic Dashboard"
-          >
-            <BarChart2 className="h-3.5 w-3.5 text-teal-600 dark:text-teal-400" />
-            <span className="hidden lg:inline">{dashboardLabel}</span>
-          </Link>
-
           <ThemeToggle />
           <LanguageSelector currentLocale={locale} />
           <a
