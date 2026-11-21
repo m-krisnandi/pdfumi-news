@@ -12,6 +12,8 @@ services:
       PORT: 3008
       NEXT_PUBLIC_SITE_URL: https://news.pdfumi.com
       CRON_SECRET: ${CRON_SECRET:-pdfumi-news-secure-cron-2026}
+    volumes:
+      - ./src/infrastructure/data:/app/src/infrastructure/data
     deploy:
       resources:
         limits:
