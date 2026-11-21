@@ -7,37 +7,27 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const authKey = searchParams.get("key");
   const doHarvest = searchParams.get("harvest") === "true";
+  const doForce = searchParams.get("force") === "true";
+  const publishImmediately = searchParams.get("publishNow") === "true";
   const expectedKey = process.env.CRON_SECRET || "pdfumi-news-secure-cron-2026";
 
   if (authKey !== expectedKey) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const scheduler = new PublishSchedulerUseCase(articleRepository);
-  const result = await scheduler.execute();
-
   let harvestedArticle = null;
   if (doHarvest) {
     const harvester = new NewsHarvesterService(articleRepository);
-    harvestedArticle = await harvester.harvestAndSchedule({
-      title: "Global Clean Energy Grid Integration Milestone",
-      category: "earth-science",
-      primaryPublisher: "Reuters Energy Wire",
-      primaryUrl: "https://reuters.com",
-      secondaryPublisher: "Nature Climate & Energy",
-      secondaryUrl: "https://nature.com",
-      researchCitation: {
-        title: "Intercontinental HVDC Supergrids: Dynamic Resilience and Zero-Loss Feasibility",
-        institutionOrJournal: "Nature Energy Journal",
-        year: 2026,
-        keyFinding: {
-          en: "Intercontinental ultra-high-voltage direct current grid connectivity reduces renewable energy intermittency by up to 88%.",
-          id: "Konektivitas transmisi arus searah tegangan ultra-tinggi antarbenua mampu menekan fluktuasi pasokan energi terbarukan hingga 88%.",
-          ja: "大陸間超高圧直流送電グリッドの接続により、再生可能エネルギーの供給変動が最大88%抑制されます。",
-        },
-      },
+    harvestedArticle = await harvester.harvestNextAvailableTopic({
+      publishImmediately,
     });
   }
+
+  const scheduler = new PublishSchedulerUseCase(articleRepository);
+  const result = await scheduler.execute({ force: doForce });
+
+  const allArticles = await articleRepository.getAllArticles();
+  const scheduledCount = allArticles.filter((a) => a.status === "scheduled").length;
 
   return NextResponse.json({
     success: true,
@@ -46,5 +36,7 @@ export async function GET(request: Request) {
     slots: PUBLISHING_SLOTS,
     result,
     harvestedArticle: harvestedArticle ? harvestedArticle.slug : null,
+    totalArticles: allArticles.length,
+    scheduledCount,
   });
 }

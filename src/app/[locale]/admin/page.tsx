@@ -18,6 +18,7 @@ import {
   Layers,
   Sparkles,
   ShieldAlert,
+  Bot,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -93,6 +94,24 @@ export default async function AdminDashboardPage({
           runHarvestText={t("runHarvestBtn")}
           publishDueText={t("publishDueBtn")}
         />
+      </div>
+
+      {/* Auto-Pilot Cron Status Card */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl border border-teal-500/30 bg-teal-500/5 text-xs text-zinc-700 dark:text-zinc-300">
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
+            <Bot className="h-5 w-5" />
+          </div>
+          <div>
+            <div className="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+              <span>Sistem Publikasi Otomatis 24/7 Aktif</span>
+              <span className="inline-flex items-center px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px] font-extrabold">ONLINE</span>
+            </div>
+            <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+              Crontab server mengeksekusi siklus riset dan penerbitan secara otomatis di latar belakang setiap 30 menit. Anda tidak perlu melakukan trigger manual.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 4 Primary Metric Cards */}
@@ -227,7 +246,7 @@ export default async function AdminDashboardPage({
               {articles.map((art) => {
                 const tr = art.translations[locale as Locale] || art.translations.en;
                 const catMeta = CATEGORIES_META[art.category];
-                const catName = catMeta ? (catMeta.name[locale as Locale] || catMeta.name.en) : art.category;
+                const catName = catMeta ? catMeta.name[locale as Locale] || catMeta.name.en : art.category;
 
                 return (
                   <tr key={art.id} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition">
@@ -285,7 +304,7 @@ export default async function AdminDashboardPage({
                           <ExternalLink className="h-3 w-3" />
                         </Link>
                       ) : (
-                        <span className="text-zinc-400 text-[11px] italic">Queued</span>
+                        <span className="text-zinc-400 text-[11px] italic font-medium">Antrean Rilis</span>
                       )}
                     </td>
                   </tr>

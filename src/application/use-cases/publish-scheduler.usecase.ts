@@ -16,12 +16,19 @@ export const PUBLISHING_SLOTS: ScheduledSlot[] = [
 export class PublishSchedulerUseCase {
   constructor(private readonly articleRepo: IArticleRepository) {}
 
-  async execute(): Promise<{
+  async execute(options?: { force?: boolean }): Promise<{
     publishedCount: number;
     publishedArticles: Article[];
   }> {
     const now = new Date();
-    const dueArticles = await this.articleRepo.getScheduledArticlesDue(now);
+    let dueArticles: Article[];
+
+    if (options?.force) {
+      const all = await this.articleRepo.getAllArticles();
+      dueArticles = all.filter((a) => a.status === "scheduled");
+    } else {
+      dueArticles = await this.articleRepo.getScheduledArticlesDue(now);
+    }
 
     const published: Article[] = [];
     for (const article of dueArticles) {
