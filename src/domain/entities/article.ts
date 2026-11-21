@@ -17,7 +17,7 @@ export interface SourceReference {
 }
 
 export interface ResearchCitation {
-  title: string;
+  title: string | { id: string; en: string; ja: string };
   authors?: string;
   institutionOrJournal: string; // e.g. "Nature Medicine", "Lancet", "MIT Media Lab"
   year: number;
