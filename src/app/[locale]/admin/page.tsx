@@ -19,6 +19,7 @@ import {
   Sparkles,
   ShieldAlert,
   Bot,
+  BarChart3,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -169,6 +170,47 @@ export default async function AdminDashboardPage({
         </div>
       </div>
 
+      {/* Rincian & Distribusi Tayangan per Artikel */}
+      <div className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 space-y-4 shadow-2xs">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+            <BarChart3 className="h-4 w-4 text-teal-600" />
+            <span>Rincian Sumber Tayangan ({totalViews} Total Views)</span>
+          </h2>
+          <span className="text-xs font-semibold text-zinc-500">
+            {published.length} Artikel Terbit
+          </span>
+        </div>
+
+        <div className="space-y-3 pt-1">
+          {published.map((art) => {
+            const tr = art.translations[locale as Locale] || art.translations.en;
+            const views = art.viewCount || 0;
+            const percentage = totalViews > 0 ? ((views / totalViews) * 100).toFixed(1) : "0";
+
+            return (
+              <div key={art.id} className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-zinc-800 dark:text-zinc-200 line-clamp-1 max-w-lg">
+                    {tr.title}
+                  </span>
+                  <div className="flex items-center gap-2 shrink-0 font-mono">
+                    <span className="font-bold text-teal-600 dark:text-teal-400">{views} views</span>
+                    <span className="text-zinc-400">({percentage}%)</span>
+                  </div>
+                </div>
+                <div className="h-2 w-full rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-teal-500 transition-all duration-500"
+                    style={{ width: `${percentage}%` }}
+                  ></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Automated Publishing Pipeline & Schedule Status */}
       <div className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/70 dark:bg-zinc-900/40 space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -237,7 +279,7 @@ export default async function AdminDashboardPage({
                 <th className="py-3 px-4">{t("tableArticle")}</th>
                 <th className="py-3 px-4">{t("tableCategory")}</th>
                 <th className="py-3 px-4">{t("tableStatus")}</th>
-                <th className="py-3 px-4 text-right">{t("tableViews")}</th>
+                <th className="py-3 px-4 text-right">Tayangan Terverifikasi</th>
                 <th className="py-3 px-4">{t("tableSources")}</th>
                 <th className="py-3 px-4 text-right">{t("tableActions")}</th>
               </tr>
@@ -247,6 +289,8 @@ export default async function AdminDashboardPage({
                 const tr = art.translations[locale as Locale] || art.translations.en;
                 const catMeta = CATEGORIES_META[art.category];
                 const catName = catMeta ? catMeta.name[locale as Locale] || catMeta.name.en : art.category;
+                const views = art.viewCount || 0;
+                const sharePercent = totalViews > 0 ? ((views / totalViews) * 100).toFixed(0) : "0";
 
                 return (
                   <tr key={art.id} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition">
@@ -275,8 +319,16 @@ export default async function AdminDashboardPage({
                       )}
                     </td>
 
-                    <td className="py-3.5 px-4 text-right whitespace-nowrap font-mono font-bold text-zinc-900 dark:text-white">
-                      {(art.viewCount || 0).toLocaleString()}
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex flex-col items-end gap-0.5">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-mono font-bold text-xs">
+                          <Eye className="h-3 w-3" />
+                          <span>{views.toLocaleString()} views</span>
+                        </span>
+                        <span className="text-[10px] text-zinc-400 font-medium">
+                          {sharePercent}% dari total
+                        </span>
+                      </div>
                     </td>
 
                     <td className="py-3.5 px-4 whitespace-nowrap">
