@@ -82,7 +82,7 @@ export default async function AdminDashboardPage({
             <ShieldAlert className="h-3.5 w-3.5" />
             <span>{t("restrictedAccessBadge")}</span>
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:white">
+          <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
             {t("title")}
           </h1>
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
@@ -90,7 +90,7 @@ export default async function AdminDashboardPage({
           </p>
         </div>
 
-        <DashboardOperations />
+        <DashboardOperations locale={locale} />
       </div>
 
       {/* Auto-Pilot Cron Status Card */}

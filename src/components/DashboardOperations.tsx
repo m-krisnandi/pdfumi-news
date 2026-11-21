@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Loader2, CheckCircle2, AlertCircle, LogOut, Zap } from "lucide-react";
 
-export function DashboardOperations() {
+export function DashboardOperations({ locale }: { locale: string }) {
   const t = useTranslations("dashboard");
   const router = useRouter();
   const [loading, setLoading] = useState<string | null>(null);
@@ -21,11 +21,21 @@ export function DashboardOperations() {
       const data = await res.json();
 
       if (data.success) {
+        const title =
+          data.harvestedArticle?.titles?.[locale] ||
+          data.harvestedArticle?.titles?.en ||
+          data.harvestedArticle?.slug ||
+          "";
+
         setFeedback({
           type: "success",
-          text: t("feedbackSuccess"),
+          text: title ? `${t("feedbackSuccess")} ("${title}")` : t("feedbackSuccess"),
         });
-        router.refresh();
+
+        // Hard refresh after brief delay so user sees feedback and table updates instantly
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200);
       } else {
         setFeedback({
           type: "error",
@@ -50,7 +60,7 @@ export function DashboardOperations() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "logout" }),
       });
-      router.refresh();
+      window.location.reload();
     } catch {
       // Ignore
     } finally {
@@ -64,14 +74,19 @@ export function DashboardOperations() {
         <button
           onClick={handleHarvestAndPublish}
           disabled={loading !== null}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs transition shadow-xs disabled:opacity-50 cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-bold text-xs transition shadow-xs disabled:opacity-50 cursor-pointer"
         >
           {loading === "sync" ? (
-            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            <>
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              <span>Sintesis Riset...</span>
+            </>
           ) : (
-            <Zap className="h-3.5 w-3.5" />
+            <>
+              <Zap className="h-3.5 w-3.5" />
+              <span>{t("syncPublishBtn")}</span>
+            </>
           )}
-          <span>{t("syncPublishBtn")}</span>
         </button>
 
         <button

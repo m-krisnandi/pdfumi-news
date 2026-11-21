@@ -35,7 +35,16 @@ export async function GET(request: Request) {
     timestamp: new Date().toISOString(),
     slots: PUBLISHING_SLOTS,
     result,
-    harvestedArticle: harvestedArticle ? harvestedArticle.slug : null,
+    harvestedArticle: harvestedArticle
+      ? {
+          slug: harvestedArticle.slug,
+          titles: {
+            en: harvestedArticle.translations.en.title,
+            id: harvestedArticle.translations.id.title,
+            ja: harvestedArticle.translations.ja.title,
+          },
+        }
+      : null,
     totalArticles: allArticles.length,
     scheduledCount,
   });

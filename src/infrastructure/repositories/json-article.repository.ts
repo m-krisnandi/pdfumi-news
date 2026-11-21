@@ -24,8 +24,8 @@ export class JsonArticleRepository implements IArticleRepository {
           this.articles = parsed;
         }
       }
-    } catch {
-      // Fallback to in-memory bundled articles
+    } catch (err) {
+      console.warn("[JsonArticleRepository] loadFromFile fallback:", err);
     }
   }
 
@@ -125,8 +125,8 @@ export class JsonArticleRepository implements IArticleRepository {
         }
         fs.writeFileSync(this.filePath, JSON.stringify(this.articles, null, 2), "utf8");
       }
-    } catch {
-      // In-memory fallback if filesystem write is restricted
+    } catch (err) {
+      console.error("[JsonArticleRepository] Failed to persistToFile:", err);
     }
   }
 }
