@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Lock, KeyRound, Loader2, AlertCircle, ShieldAlert } from "lucide-react";
 
 export function AdminLoginForm() {
   const router = useRouter();
+  const t = useTranslations("adminLogin");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,10 +30,10 @@ export function AdminLoginForm() {
       if (res.ok && data.success) {
         router.refresh();
       } else {
-        setError(data.error || "Kata sandi admin tidak valid");
+        setError(data.error || t("invalidPass"));
       }
     } catch {
-      setError("Gagal menghubungi server verifikasi.");
+      setError(t("connectionError"));
     } finally {
       setLoading(false);
     }
@@ -44,15 +46,15 @@ export function AdminLoginForm() {
           <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-500/10 text-teal-600 dark:text-teal-400 mb-2">
             <Lock className="h-6 w-6" />
           </div>
-          <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-[11px] font-bold text-zinc-600 dark:text-zinc-400">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-[11px] font-bold text-zinc-600 dark:text-zinc-400">
             <ShieldAlert className="h-3 w-3 text-amber-500" />
-            <span>Akses Terbatas Redaksi</span>
+            <span>{t("badge")}</span>
           </div>
           <h1 className="font-[family-name:var(--font-display)] text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Admin Intelligence Hub
+            {t("title")}
           </h1>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            Masukkan kunci autentikasi editorial untuk membuka analitik tayangan dan kontrol harvester otomatis.
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            {t("subtitle")}
           </p>
         </div>
 
@@ -62,7 +64,7 @@ export function AdminLoginForm() {
               htmlFor="admin-passphrase"
               className="block text-xs font-semibold text-zinc-700 dark:text-zinc-300"
             >
-              Kunci Rahasia Redaksi
+              {t("passLabel")}
             </label>
             <div className="relative">
               <input
@@ -70,7 +72,7 @@ export function AdminLoginForm() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••••••••••"
+                placeholder={t("passPlaceholder")}
                 required
                 className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white text-sm focus:outline-hidden focus:ring-2 focus:ring-teal-500 transition pl-10"
               />
@@ -93,16 +95,16 @@ export function AdminLoginForm() {
             {loading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Memverifikasi...</span>
+                <span>{t("verifyingBtn")}</span>
               </>
             ) : (
-              <span>Buka Dashboard Admin</span>
+              <span>{t("submitBtn")}</span>
             )}
           </button>
         </form>
 
-        <p className="text-[11px] text-center text-zinc-400">
-          Area ini dienkripsi dan hanya dapat diakses oleh administrator sistem.
+        <p className="text-[11px] text-center text-zinc-400 leading-normal">
+          {t("footerNote")}
         </p>
       </div>
     </div>

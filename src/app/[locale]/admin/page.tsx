@@ -80,9 +80,9 @@ export default async function AdminDashboardPage({
               <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
             </span>
             <ShieldAlert className="h-3.5 w-3.5" />
-            <span>Pusat Kendali Admin Redaksi (Restricted Access)</span>
+            <span>{t("restrictedAccessBadge")}</span>
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
+          <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:white">
             {t("title")}
           </h1>
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
@@ -90,10 +90,7 @@ export default async function AdminDashboardPage({
           </p>
         </div>
 
-        <DashboardOperations
-          runHarvestText={t("runHarvestBtn")}
-          publishDueText={t("publishDueBtn")}
-        />
+        <DashboardOperations />
       </div>
 
       {/* Auto-Pilot Cron Status Card */}
@@ -104,11 +101,13 @@ export default async function AdminDashboardPage({
           </div>
           <div>
             <div className="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
-              <span>Sistem Publikasi Otomatis 24/7 Aktif</span>
-              <span className="inline-flex items-center px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px] font-extrabold">ONLINE</span>
+              <span>{t("autoCronTitle")}</span>
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px] font-extrabold">
+                {t("autoCronStatus")}
+              </span>
             </div>
             <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
-              Crontab server mengeksekusi siklus riset dan penerbitan secara otomatis di latar belakang setiap 30 menit. Anda tidak perlu melakukan trigger manual.
+              {t("autoCronDesc")}
             </p>
           </div>
         </div>
@@ -187,35 +186,35 @@ export default async function AdminDashboardPage({
         </div>
 
         {/* 5-Stage Transformation Architecture Pipeline */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 pt-2">
           <div className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider block">Stage 1</span>
-            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">Fact Harvesting</h3>
-            <p className="text-[11px] text-zinc-500 mt-1">last30days extraction across Reuters, AP & Press Wires</p>
+            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">{t("stage1Title")}</h3>
+            <p className="text-[11px] text-zinc-500 mt-1 leading-snug">{t("stage1Desc")}</p>
           </div>
 
           <div className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider block">Stage 2</span>
-            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">Peer Citation</h3>
-            <p className="text-[11px] text-zinc-500 mt-1">Empirical substantiation (Nature, RIKEN, PubMed)</p>
+            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">{t("stage2Title")}</h3>
+            <p className="text-[11px] text-zinc-500 mt-1 leading-snug">{t("stage2Desc")}</p>
           </div>
 
           <div className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider block">Stage 3</span>
-            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">E-E-A-T Architecture</h3>
-            <p className="text-[11px] text-zinc-500 mt-1">Blog engine structuring with verified multi-source attribution</p>
+            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">{t("stage3Title")}</h3>
+            <p className="text-[11px] text-zinc-500 mt-1 leading-snug">{t("stage3Desc")}</p>
           </div>
 
           <div className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider block">Stage 4</span>
-            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">Copywriting Hook</h3>
-            <p className="text-[11px] text-zinc-500 mt-1">Magnetic headlines & contextual wisdom quotes</p>
+            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">{t("stage4Title")}</h3>
+            <p className="text-[11px] text-zinc-500 mt-1 leading-snug">{t("stage4Desc")}</p>
           </div>
 
           <div className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider block">Stage 5</span>
-            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">Humanizer Filter</h3>
-            <p className="text-[11px] text-zinc-500 mt-1">100% natural journalistic prose in EN, ID & JA</p>
+            <h3 className="text-xs font-bold text-zinc-900 dark:text-white mt-1">{t("stage5Title")}</h3>
+            <p className="text-[11px] text-zinc-500 mt-1 leading-snug">{t("stage5Desc")}</p>
           </div>
         </div>
       </div>
@@ -227,7 +226,9 @@ export default async function AdminDashboardPage({
             <Sparkles className="h-4 w-4 text-teal-600" />
             <span>{t("tableTitle")}</span>
           </h2>
-          <span className="text-xs text-zinc-500 font-medium">{articles.length} total entries</span>
+          <span className="text-xs text-zinc-500 font-medium">
+            {articles.length} {t("totalEntries")}
+          </span>
         </div>
 
         <div className="overflow-x-auto">
@@ -237,7 +238,7 @@ export default async function AdminDashboardPage({
                 <th className="py-3 px-4">{t("tableArticle")}</th>
                 <th className="py-3 px-4">{t("tableCategory")}</th>
                 <th className="py-3 px-4">{t("tableStatus")}</th>
-                <th className="py-3 px-4 text-right">Tayangan Terverifikasi</th>
+                <th className="py-3 px-4 text-right">{t("tableViews")}</th>
                 <th className="py-3 px-4">{t("tableSources")}</th>
                 <th className="py-3 px-4 text-right">{t("tableActions")}</th>
               </tr>
@@ -281,10 +282,10 @@ export default async function AdminDashboardPage({
                       <div className="flex flex-col items-end gap-0.5">
                         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-mono font-bold text-xs">
                           <Eye className="h-3 w-3" />
-                          <span>{views.toLocaleString()} views</span>
+                          <span>{views.toLocaleString()}</span>
                         </span>
                         <span className="text-[10px] text-zinc-400 font-medium">
-                          {sharePercent}% dari total
+                          {sharePercent}% {t("ofTotal")}
                         </span>
                       </div>
                     </td>
@@ -293,12 +294,12 @@ export default async function AdminDashboardPage({
                       <div className="flex items-center gap-2">
                         <span className="inline-flex items-center gap-1 text-zinc-600 dark:text-zinc-400 text-[11px]">
                           <ShieldCheck className="h-3 w-3 text-teal-600" />
-                          <span>{art.sources.length} sources</span>
+                          <span>{art.sources.length} {t("sourcesCount")}</span>
                         </span>
                         {art.researchStudy && (
                           <span className="inline-flex items-center gap-0.5 text-indigo-600 dark:text-indigo-400 text-[10px] font-bold">
                             <BookOpenCheck className="h-3 w-3" />
-                            <span>Cited</span>
+                            <span>{t("citedBadge")}</span>
                           </span>
                         )}
                       </div>
@@ -314,7 +315,7 @@ export default async function AdminDashboardPage({
                           <ExternalLink className="h-3 w-3" />
                         </Link>
                       ) : (
-                        <span className="text-zinc-400 text-[11px] italic font-medium">Antrean Rilis</span>
+                        <span className="text-zinc-400 text-[11px] italic font-medium">{t("releaseQueue")}</span>
                       )}
                     </td>
                   </tr>
