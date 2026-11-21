@@ -345,6 +345,48 @@ export const VERIFIED_GLOBAL_TOPICS: FeedTopic[] = [
   },
 ];
 
+
+export const CATEGORY_IMAGE_POOLS: Record<ArticleCategory, string[]> = {
+  "tech-ai": [
+    "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&w=1200&q=80",
+  ],
+  "health-wellness": [
+    "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1527066579998-dbbae57f45ce?auto=format&fit=crop&w=1200&q=80",
+  ],
+  "earth-science": [
+    "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
+  ],
+  "global-economy": [
+    "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+  ],
+  "deep-dive": [
+    "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
+  ],
+};
+
 export class NewsHarvesterService {
   constructor(private readonly articleRepo: IArticleRepository) {}
 
@@ -416,6 +458,20 @@ export class NewsHarvesterService {
 
     const isImmediate = options?.publishImmediately ?? false;
 
+    // Deduplicate cover images across articles so each article receives a distinct visual
+    const existingArticles = await this.articleRepo.getAllArticles();
+    const usedCoverUrls = new Set(
+      existingArticles.map((a) => a.coverImage?.url).filter(Boolean)
+    );
+
+    let finalCoverUrl = topic.coverUrl;
+    if (!finalCoverUrl || usedCoverUrls.has(finalCoverUrl)) {
+      const pool =
+        CATEGORY_IMAGE_POOLS[topic.category] || CATEGORY_IMAGE_POOLS["tech-ai"];
+      const unused = pool.find((img) => !usedCoverUrls.has(img));
+      finalCoverUrl = unused || pool[Math.floor(Math.random() * pool.length)];
+    }
+
     const newArticle: Article = {
       id: `art-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
       slug,
@@ -423,9 +479,7 @@ export class NewsHarvesterService {
       status: isImmediate ? "published" : "scheduled",
       featured: false,
       coverImage: {
-        url:
-          topic.coverUrl ||
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+        url: finalCoverUrl,
         alt: topic.title.en,
         caption: {
           en: `Empirical findings and multi-source reporting on ${topic.title.en}`,
