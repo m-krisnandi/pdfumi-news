@@ -8,6 +8,8 @@ import { Flame, BookOpen, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {
@@ -48,16 +50,22 @@ export default async function HomePage({
 
   const t = await getTranslations({ locale, namespace: "home" });
   const newsUseCase = new GetNewsUseCase(articleRepository);
-  const articles = await newsUseCase.executeFeed({ locale: locale as Locale });
+
+  const articles = await newsUseCase.executeFeed({
+    locale: locale as Locale,
+  });
 
   const leadArticle = articles[0];
   const sideArticles = articles.slice(1);
-  const leadContent = leadArticle?.translations[locale as Locale] || leadArticle?.translations.en;
+
+  const leadContent = leadArticle
+    ? leadArticle.translations[locale as Locale] || leadArticle.translations.en
+    : null;
 
   return (
-    <div className="space-y-10 sm:space-y-12">
+    <div className="space-y-10 sm:space-y-12 pb-12">
       {/* Lead Story Hero Layout — Entire Card Clickable */}
-      {leadArticle && (
+      {leadArticle && leadContent && (
         <section className="group relative grid gap-8 lg:grid-cols-12 items-center rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-6 sm:p-8 overflow-hidden shadow-xs hover:shadow-md hover:border-teal-500/40 transition-all cursor-pointer">
           {/* Full-Card Clickable Link Overlay */}
           <Link
@@ -76,6 +84,12 @@ export default async function HomePage({
               <span className="text-xs font-semibold text-teal-600 dark:text-teal-400">
                 {leadArticle.sources.length} {t("sourcesCount")}
               </span>
+              {leadArticle.researchStudy && (
+                <span className="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 text-xs">
+                  <BookOpen className="h-3.5 w-3.5" />
+                  <span>{t("studyIncluded")}</span>
+                </span>
+              )}
             </div>
 
             <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
@@ -91,12 +105,6 @@ export default async function HomePage({
                 <Clock className="h-3.5 w-3.5 text-teal-600" />
                 <span>{leadContent.readingTimeMinutes} {t("minRead")}</span>
               </span>
-              {leadArticle.researchStudy && (
-                <span className="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400">
-                  <BookOpen className="h-3.5 w-3.5" />
-                  <span>{t("studyIncluded")}</span>
-                </span>
-              )}
               <span className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-teal-600 group-hover:bg-teal-700 text-white px-4 py-2 text-xs font-bold transition shadow-xs">
                 <span>{t("readArticle")}</span>
                 <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -120,14 +128,12 @@ export default async function HomePage({
       {/* Latest Stories Grid */}
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-4">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
-              {t("latestTitle")}
-            </h2>
-            <p className="text-xs text-zinc-500 mt-0.5">
-              {t("latestSubtitle")}
-            </p>
-          </div>
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+            {t("latestTitle")}
+          </h2>
+          <p className="text-xs text-zinc-500 mt-0.5">
+            {t("latestSubtitle")}
+          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
