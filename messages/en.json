@@ -11,7 +11,8 @@
     "categories": "Categories",
     "about": "About Us",
     "editorial": "Editorial Guidelines",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "dashboard": "Dashboard"
   },
   "categories": {
     "tech-ai": "Tech & AI",
@@ -47,6 +48,36 @@
     "relatedArticles": "Related Stories",
     "sponsoredContent": "Sponsored & Curated Recommendations",
     "backToFeed": "Back to Home Feed"
+  },
+  "dashboard": {
+    "badge": "Editorial Command & Analytics",
+    "title": "News Operations & Traffic Intelligence",
+    "subtitle": "Real-time verification of readership impressions, content performance, and automated pipeline execution.",
+    "engineStatus": "Automated Harvester & Scheduler Online",
+    "totalViews": "Total Readership Views",
+    "totalViewsSub": "Accumulated authentic impressions across multi-lingual articles",
+    "totalArticles": "Published Reports",
+    "totalArticlesSub": "Fully fact-checked & live globally",
+    "scheduledQueue": "Scheduled Queue",
+    "scheduledQueueSub": "Awaiting next automated release window",
+    "avgReadingTime": "Avg. Read Time",
+    "avgReadingTimeSub": "Estimated comprehensive reading duration",
+    "pipelineTitle": "Automated Publishing & Research Workflow",
+    "pipelineDesc": "Articles are synthesized across primary press agencies adhering to strict anti-hoax guidelines, enriched with peer-reviewed research, and published at global peak hours.",
+    "nextSlotLabel": "Next Automated Publishing Window",
+    "triggerSectionTitle": "Operational Actions",
+    "runHarvestBtn": "Trigger Harvester & Schedule",
+    "publishDueBtn": "Publish Due Articles Now",
+    "tableTitle": "Live Content Performance & Metrics",
+    "tableArticle": "Article Title & Topic",
+    "tableCategory": "Category",
+    "tableStatus": "Status",
+    "tableViews": "Verified Views",
+    "tableSources": "Sources & Attribution",
+    "tableActions": "Action",
+    "viewArticle": "View Live",
+    "scheduledBadge": "Scheduled",
+    "publishedBadge": "Published"
   },
   "footer": {
     "copyright": "Pdfumi News Network. All rights reserved.",

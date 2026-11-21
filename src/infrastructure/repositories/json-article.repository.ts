@@ -10,6 +10,14 @@ export class JsonArticleRepository implements IArticleRepository {
     this.articles = rawArticles as Article[];
   }
 
+  async getAllArticles(): Promise<Article[]> {
+    return [...this.articles].sort((a, b) => {
+      const dateA = new Date(a.publishedAt || a.createdAt).getTime();
+      const dateB = new Date(b.publishedAt || b.createdAt).getTime();
+      return dateB - dateA;
+    });
+  }
+
   async getPublishedArticles(options?: {
     category?: ArticleCategory;
     limit?: number;
@@ -70,6 +78,19 @@ export class JsonArticleRepository implements IArticleRepository {
       this.articles.unshift(article);
     }
 
+    await this.persistToFile();
+    return article;
+  }
+
+  async incrementViewCount(id: string): Promise<void> {
+    const article = this.articles.find((a) => a.id === id);
+    if (article) {
+      article.viewCount = (article.viewCount || 0) + 1;
+      await this.persistToFile();
+    }
+  }
+
+  private async persistToFile(): Promise<void> {
     try {
       if (typeof window === "undefined") {
         const fs = await import("fs");
@@ -80,16 +101,7 @@ export class JsonArticleRepository implements IArticleRepository {
         }
       }
     } catch {
-      // In standalone container, filesystem write is optional
-    }
-
-    return article;
-  }
-
-  async incrementViewCount(id: string): Promise<void> {
-    const article = this.articles.find((a) => a.id === id);
-    if (article) {
-      article.viewCount = (article.viewCount || 0) + 1;
+      // In-memory fallback if filesystem write is restricted
     }
   }
 }

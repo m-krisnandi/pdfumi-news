@@ -11,7 +11,8 @@
     "categories": "Kategori",
     "about": "Tentang Kami",
     "editorial": "Pedoman Redaksi",
-    "privacy": "Kebijakan Privasi"
+    "privacy": "Kebijakan Privasi",
+    "dashboard": "Dashboard"
   },
   "categories": {
     "tech-ai": "Teknologi & AI",
@@ -47,6 +48,36 @@
     "relatedArticles": "Berita Terkait",
     "sponsoredContent": "Rekomendasi & Konten Terkurasi",
     "backToFeed": "Kembali ke Beranda"
+  },
+  "dashboard": {
+    "badge": "Pusat Operasional & Analitik Redaksi",
+    "title": "Operasional Berita & Intelijen Tayangan",
+    "subtitle": "Pemantauan langsung performa pembaca, verifikasi artikel, dan eksekusi penerbitan otomatis.",
+    "engineStatus": "Harvester & Penjadwal Otomatis Aktif",
+    "totalViews": "Total Tayangan Pembaca",
+    "totalViewsSub": "Akumulasi tayangan pembaca riil di seluruh bahasa",
+    "totalArticles": "Artikel Terbit",
+    "totalArticlesSub": "Terverifikasi mutlak dan tayang global",
+    "scheduledQueue": "Antrean Terjadwal",
+    "scheduledQueueSub": "Menanti jendela publikasi otomatis berikutnya",
+    "avgReadingTime": "Rata-rata Waktu Baca",
+    "avgReadingTimeSub": "Estimasi durasi penelaahan mendalam pembaca",
+    "pipelineTitle": "Alur Kerja Riset & Publikasi Otomatis",
+    "pipelineDesc": "Berita disintesis dari kantor berita primer secara legal dan anti-hoaks, dilengkapi rujukan riset ilmiah, lalu dijadwalkan pada jam sibuk global.",
+    "nextSlotLabel": "Jadwal Rilis Otomatis Terdekat",
+    "triggerSectionTitle": "Tindakan Operasional",
+    "runHarvestBtn": "Jalankan Harvester & Jadwalkan",
+    "publishDueBtn": "Publikasikan Antrean Jatuh Tempo",
+    "tableTitle": "Kinerja & Statistik Konten Berita",
+    "tableArticle": "Judul & Topik Berita",
+    "tableCategory": "Kategori",
+    "tableStatus": "Status",
+    "tableViews": "Tayangan Terverifikasi",
+    "tableSources": "Sumber & Atribusi",
+    "tableActions": "Aksi",
+    "viewArticle": "Lihat Berita",
+    "scheduledBadge": "Terjadwal",
+    "publishedBadge": "Terbit"
   },
   "footer": {
     "copyright": "Jaringan Berita Pdfumi. Hak Cipta Dilindungi.",

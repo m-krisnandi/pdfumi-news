@@ -2,6 +2,8 @@ import { Article, ArticleCategory } from "../entities/article";
 import { Locale } from "@/i18n/config";
 
 export interface IArticleRepository {
+  getAllArticles(): Promise<Article[]>;
+
   getPublishedArticles(options?: {
     category?: ArticleCategory;
     limit?: number;

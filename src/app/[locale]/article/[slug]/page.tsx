@@ -9,6 +9,7 @@ import { ResearchStudyBox } from "@/components/ResearchStudyBox";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ShareButton } from "@/components/ShareButton";
+import { ViewTracker } from "@/components/ViewTracker";
 import { Clock, Calendar, ArrowLeft, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -42,8 +43,6 @@ export async function generateMetadata({
       title: content.title,
       description: content.summary,
       url: `https://news.pdfumi.com/${locale}/article/${article.slug}`,
-      type: "article",
-      publishedTime: article.publishedAt,
       images: [
         {
           url: article.coverImage.url,
@@ -52,11 +51,19 @@ export async function generateMetadata({
           alt: article.coverImage.alt,
         },
       ],
+      type: "article",
+      publishedTime: article.publishedAt || article.createdAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.title,
+      description: content.summary,
+      images: [article.coverImage.url],
     },
   };
 }
 
-export default async function ArticlePage({
+export default async function ArticleDetailPage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
@@ -66,6 +73,7 @@ export default async function ArticlePage({
 
   const t = await getTranslations({ locale, namespace: "article" });
   const tHome = await getTranslations({ locale, namespace: "home" });
+
   const newsUseCase = new GetNewsUseCase(articleRepository);
   const { article, related } = await newsUseCase.executeDetail(slug);
 
@@ -76,34 +84,34 @@ export default async function ArticlePage({
   const content = article.translations[locale as Locale] || article.translations.en;
   const categoryMeta = CATEGORIES_META[article.category];
   const catName = categoryMeta ? (categoryMeta.name[locale as Locale] || categoryMeta.name.en) : article.category;
+  const copiedNotification = locale === "id" ? "Tautan berhasil disalin!" : locale === "ja" ? "リンクをコピーしました" : "Link copied to clipboard!";
 
+  // Resolve caption based on locale or fallback to string
   const captionText =
     typeof article.coverImage.caption === "object"
       ? article.coverImage.caption[locale as Locale] || article.coverImage.caption.en
       : article.coverImage.caption;
 
-  const copiedNotification = locale === "id" ? "Tautan Tersalin!" : locale === "ja" ? "リンクをコピーしました！" : "Link Copied!";
-
-  // JSON-LD NewsArticle Structured Data for Google News and SEO
+  // JSON-LD NewsArticle structured data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: content.title,
     description: content.summary,
     image: [article.coverImage.url],
-    datePublished: article.publishedAt,
+    datePublished: article.publishedAt || article.createdAt,
     dateModified: article.updatedAt,
     author: {
       "@type": "Organization",
-      name: "Pdfumi News Network",
+      name: "Pdfumi News Editorial Bureau",
       url: "https://news.pdfumi.com",
     },
     publisher: {
       "@type": "Organization",
-      name: "Pdfumi",
+      name: "Pdfumi Global News",
       logo: {
         "@type": "ImageObject",
-        url: "https://pdfumi.com/icon.svg",
+        url: "https://news.pdfumi.com/logo.png",
       },
     },
     mainEntityOfPage: {
@@ -119,6 +127,9 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Real View Tracker */}
+      <ViewTracker articleId={article.id} />
 
       <article className="max-w-4xl mx-auto space-y-8">
         {/* Breadcrumb / Back Link */}

@@ -11,7 +11,8 @@
     "categories": "カテゴリー",
     "about": "会社概要",
     "editorial": "編集ガイドライン",
-    "privacy": "プライバシーポリシー"
+    "privacy": "プライバシーポリシー",
+    "dashboard": "ダッシュボード"
   },
   "categories": {
     "tech-ai": "テクノロジー＆AI",
@@ -47,6 +48,36 @@
     "relatedArticles": "関連記事",
     "sponsoredContent": "スポンサー提供および推奨コンテンツ",
     "backToFeed": "トップへ戻る"
+  },
+  "dashboard": {
+    "badge": "編集指令およびトラフィック分析",
+    "title": "報道オペレーション＆閲覧インテリジェンス",
+    "subtitle": "読者インプレッション、記事別パフォーマンス、自動配信パイプラインのリアルタイム監視。",
+    "engineStatus": "自動記事収集・スケジューラー稼働中",
+    "totalViews": "総読者閲覧数",
+    "totalViewsSub": "多言語記事を通じた実読者インプレッションの累計",
+    "totalArticles": "公開済みレポート",
+    "totalArticlesSub": "完全ファクトチェック済みで世界へ配信中",
+    "scheduledQueue": "配信待機キュー",
+    "scheduledQueueSub": "次回の自動配信スロットを待機中",
+    "avgReadingTime": "平均読了時間",
+    "avgReadingTimeSub": "読者の詳細な閲覧・検証の所要目安",
+    "pipelineTitle": "自動収集・検証・配信パイプライン",
+    "pipelineDesc": "主要通信社の報道から客観的事実を抽出し、査読済み論文による裏付けを付与して世界各地のピーク時間帯に配信します。",
+    "nextSlotLabel": "次回の自動配信スロット",
+    "triggerSectionTitle": "運用アクション",
+    "runHarvestBtn": "記事収集・スケジュールを実行",
+    "publishDueBtn": "期日を迎えた記事を即時配信",
+    "tableTitle": "配信記事の閲覧実績とメトリクス",
+    "tableArticle": "記事タイトル・トピック",
+    "tableCategory": "カテゴリー",
+    "tableStatus": "状態",
+    "tableViews": "実閲覧数",
+    "tableSources": "情報源と帰属",
+    "tableActions": "操作",
+    "viewArticle": "記事を確認",
+    "scheduledBadge": "待機中",
+    "publishedBadge": "公開中"
   },
   "footer": {
     "copyright": "Pdfumi News Network. 無断転載を禁じます。",
