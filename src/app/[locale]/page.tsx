@@ -4,7 +4,7 @@ import { articleRepository } from "@/infrastructure/repositories/json-article.re
 import { GetNewsUseCase } from "@/application/use-cases/get-news.usecase";
 import { ArticleCard } from "@/components/ArticleCard";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
-import { ShieldCheck, Flame, BookOpen, Clock, Sparkles } from "lucide-react";
+import { Flame, BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -56,28 +56,6 @@ export default async function HomePage({
 
   return (
     <div className="space-y-10 sm:space-y-12">
-      {/* Transparency & Credibility Trust Bar */}
-      <div className="rounded-2xl border border-teal-500/20 bg-gradient-to-r from-teal-500/10 via-emerald-500/5 to-transparent p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white shadow-sm">
-            <ShieldCheck className="h-5 w-5" />
-          </div>
-          <div>
-            <h2 className="text-xs sm:text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
-              Standar Jurnalistik Transformatif & Multi-Sumber
-            </h2>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">
-              {t("transparencyNote")}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 shrink-0 text-xs font-semibold text-teal-700 dark:text-teal-400">
-          <Sparkles className="h-4 w-4" />
-          <span>Anti-Hoaks & E-E-A-T Certified</span>
-        </div>
-      </div>
-
       {/* Top Banner AdSense Slot */}
       <AdSensePlaceholder slotId="home-top-leaderboard" format="leaderboard" />
 
