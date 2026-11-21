@@ -13,20 +13,31 @@
     "editorial": "Editorial Guidelines",
     "privacy": "Privacy Policy"
   },
+  "categories": {
+    "tech-ai": "Tech & AI",
+    "health-wellness": "Health & Science",
+    "global-economy": "Global Economy",
+    "earth-science": "Earth & Science",
+    "deep-dive": "Deep Dive"
+  },
   "home": {
     "breaking": "GLOBAL HIGHLIGHT",
     "featuredTitle": "Verified Lead Stories",
     "latestTitle": "Latest Reports & Analysis",
+    "latestSubtitle": "Fact-verified reporting and empirical research from around the world",
     "viewAll": "View All",
     "readArticle": "Read Full Report",
     "minRead": "min read",
     "sourcesCount": "verified sources",
+    "sourcesUnit": "Sources",
     "studyIncluded": "Scientific Study Cited",
+    "studyBadge": "Research",
     "transparencyNote": "Synthesized across 2-3 verified international press agencies adhering to strict anti-hoax journalistic standards."
   },
   "article": {
     "publishedOn": "Published on",
     "category": "Category",
+    "keyFinding": "Key Empirical Finding:",
     "verifiedSources": "Primary Sources & Fact Verification",
     "verifiedSourcesDesc": "This article is a transformative synthesis derived from the following verified agencies to ensure copyright compliance and uncompromised accuracy.",
     "scientificStudy": "Peer-Reviewed Research & Empirical Data",

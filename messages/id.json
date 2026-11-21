@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "Pdfumi Global News",
     "tagline": "Jendela Berita Dunia & Riset Terverifikasi",
-    "description": "Portal kurasi berita internasional terpercaya, sintesis multi-sumber, dan kajian riset sains berbasis fakta."
+    "description": "Kurasi berita internasional multi-sumber, analisis studi ilmiah, dan peliputan terverifikasi bebas hoaks."
   },
   "nav": {
     "home": "Beranda",
@@ -10,36 +10,47 @@
     "backToPdfumi": "Alat PDFumi",
     "categories": "Kategori",
     "about": "Tentang Kami",
-    "editorial": "Pedoman Editorial",
+    "editorial": "Pedoman Redaksi",
     "privacy": "Kebijakan Privasi"
+  },
+  "categories": {
+    "tech-ai": "Teknologi & AI",
+    "health-wellness": "Kesehatan & Riset",
+    "global-economy": "Ekonomi Global",
+    "earth-science": "Sains & Alam",
+    "deep-dive": "Investigasi Mendalam"
   },
   "home": {
     "breaking": "SOROTAN DUNIA",
     "featuredTitle": "Berita Utama Terverifikasi",
-    "latestTitle": "Laporan Terbaru & Analisis",
+    "latestTitle": "Laporan & Analisis Terkini",
+    "latestSubtitle": "Liputan terverifikasi dan riset ilmiah dari berbagai belahan dunia",
     "viewAll": "Lihat Semua",
     "readArticle": "Baca Selengkapnya",
     "minRead": "menit baca",
     "sourcesCount": "sumber terverifikasi",
-    "studyIncluded": "Disertai Riset Ilmiah",
-    "transparencyNote": "Disintesis dari minimal 2-3 kantor berita resmi internasional dengan standar jurnalistik bebas hoaks."
+    "sourcesUnit": "Sumber",
+    "studyIncluded": "Disertai Studi Ilmiah",
+    "studyBadge": "Riset",
+    "transparencyNote": "Disintesis dari 2-3 kantor berita internasional terverifikasi dengan standar anti-hoaks."
   },
   "article": {
-    "publishedOn": "Dipublikasikan pada",
+    "publishedOn": "Diterbitkan pada",
     "category": "Kategori",
-    "verifiedSources": "Sumber Berita & Verifikasi Fakta",
-    "verifiedSourcesDesc": "Artikel ini merupakan hasil sintesis transformatif dari kantor berita dan dokumen resmi berikut demi menjamin akurasi dan kepatuhan hak cipta.",
-    "scientificStudy": "Kajian Riset & Data Ilmiah",
-    "scientificStudyDesc": "Temuan fakta dalam artikel ini diperkuat oleh publikasi akademis dan uji klinis berikut:",
-    "wisdomTitle": "Hikmah & Renungan Kontekstual",
+    "keyFinding": "Temuan Utama:",
+    "verifiedSources": "Sumber Utama & Verifikasi Fakta",
+    "verifiedSourcesDesc": "Artikel ini merupakan sintesis transformatif dari kantor berita kredibel berikut untuk mematuhi hak cipta dan memastikan akurasi mutlak.",
+    "scientificStudy": "Penelitian Mitra Sejawat & Data Empiris",
+    "scientificStudyDesc": "Fakta dalam laporan ini diverifikasi dan dikonfirmasi melalui publikasi jurnal medis / sains berikut:",
+    "wisdomTitle": "Hikmah Kontekstual & Refleksi Universal",
     "share": "Bagikan Berita",
     "relatedArticles": "Berita Terkait",
-    "sponsoredContent": "Sponsor & Rekomendasi Terpilih",
+    "sponsoredContent": "Rekomendasi & Konten Terkurasi",
     "backToFeed": "Kembali ke Beranda"
   },
   "footer": {
-    "copyright": "Pdfumi News Network. Seluruh hak cipta dilindungi undang-undang.",
-    "disclaimer": "Informasi disajikan untuk tujuan edukasi dan wawasan global. Seluruh kutipan fakta dan data mencantumkan sumber asli yang sah.",
-    "mainTools": "Kembali ke PDF Tools Utama"
+    "copyright": "Jaringan Berita Pdfumi. Hak Cipta Dilindungi.",
+    "disclaimer": "Pemberitaan ditujukan untuk edukasi dan wawasan global. Seluruh kutipan dan data mencantumkan atribusi sumber asli.",
+    "mainTools": "Kembali ke Konverter PDFumi"
   }
 }

@@ -8,7 +8,7 @@ import { SourceVerificationBox } from "@/components/SourceVerificationBox";
 import { ResearchStudyBox } from "@/components/ResearchStudyBox";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
 import { ArticleCard } from "@/components/ArticleCard";
-import { Clock, Eye, Calendar, ArrowLeft, Share2, Bookmark } from "lucide-react";
+import { Clock, Eye, Calendar, ArrowLeft, Share2 } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -34,7 +34,7 @@ export async function generateMetadata({
         id: `https://news.pdfumi.com/id/article/${article.slug}`,
         en: `https://news.pdfumi.com/en/article/${article.slug}`,
         ja: `https://news.pdfumi.com/ja/article/${article.slug}`,
-        "x-default": `https://news.pdfumi.com/id/article/${article.slug}`,
+        "x-default": `https://news.pdfumi.com/en/article/${article.slug}`,
       },
     },
     openGraph: {
@@ -74,7 +74,7 @@ export default async function ArticlePage({
 
   const content = article.translations[locale as Locale] || article.translations.en;
   const categoryMeta = CATEGORIES_META[article.category];
-  const catName = categoryMeta.name[locale as Locale] || categoryMeta.name.en;
+  const catName = categoryMeta ? (categoryMeta.name[locale as Locale] || categoryMeta.name.en) : article.category;
 
   // JSON-LD NewsArticle Structured Data for Google News and SEO
   const jsonLd = {
@@ -223,6 +223,7 @@ export default async function ArticlePage({
             titleText={t("scientificStudy")}
             descText={t("scientificStudyDesc")}
             wisdomTitle={t("wisdomTitle")}
+            keyFindingLabel={t("keyFinding")}
           />
         )}
 

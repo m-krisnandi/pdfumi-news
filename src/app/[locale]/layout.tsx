@@ -43,6 +43,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer
+            locale={locale as Locale}
             copyrightText={tFooter("copyright")}
             disclaimerText={tFooter("disclaimer")}
             mainToolsText={tFooter("mainTools")}

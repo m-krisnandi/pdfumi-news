@@ -1,45 +1,56 @@
 {
   "meta": {
-    "siteName": "Pdfumi グローバルニュース",
-    "tagline": "検証済み国際報道と科学的知見",
-    "description": "複数の一次情報源に基づく正確な国際ニュースのキュレーション、科学研究の解説、信頼性の高いグローバル報道。"
+    "siteName": "Pdfumi Global News",
+    "tagline": "検証された世界報道と最新研究知見",
+    "description": "信頼できる複数ソースからの世界ニュース、査読済み学術研究、ファクトチェック済みの調査報道。"
   },
   "nav": {
     "home": "ホーム",
     "allNews": "全記事一覧",
-    "backToPdfumi": "PDFumi ツールへ",
+    "backToPdfumi": "PDFumi ツール",
     "categories": "カテゴリー",
-    "about": "当サイトについて",
-    "editorial": "編集方針",
+    "about": "会社概要",
+    "editorial": "編集ガイドライン",
     "privacy": "プライバシーポリシー"
   },
+  "categories": {
+    "tech-ai": "テクノロジー＆AI",
+    "health-wellness": "健康＆医学研究",
+    "global-economy": "世界経済・ビジネス",
+    "earth-science": "地球科学＆環境",
+    "deep-dive": "深層分析"
+  },
   "home": {
-    "breaking": "世界速報",
-    "featuredTitle": "検証済み主要ニュース",
-    "latestTitle": "最新分析レポート",
+    "breaking": "世界の注目",
+    "featuredTitle": "検証済みトップニュース",
+    "latestTitle": "最新レポート＆分析",
+    "latestSubtitle": "世界各地のファクトチェック済み報道と科学的研究データ",
     "viewAll": "すべて見る",
-    "readArticle": "続きを読む",
+    "readArticle": "レポート全文を読む",
     "minRead": "分で読める",
-    "sourcesCount": "件の検証済み情報源",
-    "studyIncluded": "学術論文の引用あり",
-    "transparencyNote": "複数の国際通信社および査読付き論文から事実のみを客観的に抽出・再構成した信頼性の高い報道です。"
+    "sourcesCount": "件の検証ソース",
+    "sourcesUnit": "情報源",
+    "studyIncluded": "学術論文を引用",
+    "studyBadge": "研究",
+    "transparencyNote": "著作権法に準拠し、複数の国際報道機関の事実を独自に統合・再構成しています。"
   },
   "article": {
     "publishedOn": "公開日",
     "category": "カテゴリー",
-    "verifiedSources": "参照した一次情報源とファクトチェック",
-    "verifiedSourcesDesc": "本記事は著作権を遵守し、情報の正確性を担保するため、以下の報道機関・公式発表を総合的に分析・再構成しています。",
-    "scientificStudy": "査読付き学術研究・実証データ",
-    "scientificStudyDesc": "本報道に記載された科学的根拠は、以下の学術研究機関による公表データに基づいています：",
-    "wisdomTitle": "普遍的知恵と現代的考察",
+    "keyFinding": "主な実証的知見：",
+    "verifiedSources": "一次情報源とファクトチェック",
+    "verifiedSourcesDesc": "本記事は著作権を厳格に遵守し正確性を担保するため、以下の認定報道機関の発表を独自に分析・統合したものです。",
+    "scientificStudy": "査読済み論文および実証研究データ",
+    "scientificStudyDesc": "本報告における事実関係は、以下の査読済み学術誌・研究論文により実証・裏付けされています：",
+    "wisdomTitle": "本質的洞察と普遍的な視点",
     "share": "記事を共有",
-    "relatedArticles": "関連ニュース",
-    "sponsoredContent": "推奨スポンサー情報",
-    "backToFeed": "トップページへ戻る"
+    "relatedArticles": "関連記事",
+    "sponsoredContent": "スポンサー提供および推奨コンテンツ",
+    "backToFeed": "トップへ戻る"
   },
   "footer": {
     "copyright": "Pdfumi News Network. 無断転載を禁じます。",
-    "disclaimer": "国際社会の知見を広める目的で作成されています。全ての引用・データには検証可能な出典を明記しています。",
-    "mainTools": "メインのPDF便利ツールへ戻る"
+    "disclaimer": "国際的な教養・認識向上のために配信しています。すべての引用およびデータには検証可能な情報源を明記しています。",
+    "mainTools": "PDFumi メインツールへ戻る"
   }
 }

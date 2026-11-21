@@ -24,7 +24,7 @@ export async function generateMetadata({
         id: "https://news.pdfumi.com/id",
         en: "https://news.pdfumi.com/en",
         ja: "https://news.pdfumi.com/ja",
-        "x-default": "https://news.pdfumi.com/id",
+        "x-default": "https://news.pdfumi.com/en",
       },
     },
     openGraph: {
@@ -126,7 +126,7 @@ export default async function HomePage({
               {t("latestTitle")}
             </h2>
             <p className="text-xs text-zinc-500 mt-0.5">
-              Liputan terverifikasi dari berbagai belahan dunia
+              {t("latestSubtitle")}
             </p>
           </div>
         </div>
