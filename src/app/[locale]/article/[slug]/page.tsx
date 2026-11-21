@@ -245,11 +245,12 @@ export default async function ArticleDetailPage({
           sources={article.sources}
           titleText={t("verifiedSources")}
           descText={t("verifiedSourcesDesc")}
+          badgeText={t("factCheckedBadge")}
         />
 
         {/* Tags */}
         <div className="flex flex-wrap items-center gap-2 pt-4">
-          <span className="text-xs font-bold text-zinc-500">Tags:</span>
+          <span className="text-xs font-bold text-zinc-500">{t("tags")}</span>
           {content.tags.map((tag) => (
             <span
               key={tag}

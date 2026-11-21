@@ -34,7 +34,14 @@
     "sourcesUnit": "Sumber",
     "studyIncluded": "Disertai Rujukan Riset",
     "studyBadge": "Riset Ilmiah",
-    "transparencyNote": "Disintesis dari 2-3 kantor berita internasional terverifikasi dengan standar jurnalistik anti-hoaks ketat."
+    "transparencyNote": "Disintesis dari 2-3 kantor berita internasional terverifikasi dengan standar jurnalistik anti-hoaks ketat.",
+    "noArticles": "Belum ada laporan terverifikasi pada kategori ini untuk wilayah bahasa yang dipilih."
+  },
+  "pagination": {
+    "prev": "Sebelumnya",
+    "next": "Berikutnya",
+    "page": "Halaman",
+    "of": "dari"
   },
   "article": {
     "publishedOn": "Diterbitkan pada",
@@ -42,9 +49,11 @@
     "keyFinding": "Temuan Kunci Riset Empiris:",
     "verifiedSources": "Sumber Utama & Verifikasi Fakta",
     "verifiedSourcesDesc": "Artikel ini merupakan sintesis transformatif dari kantor berita primer berikut guna menjaga akurasi mutlak dan integritas hak cipta.",
+    "factCheckedBadge": "100% Terverifikasi & Berakreditasi Resmi",
     "scientificStudy": "Telaah Ilmiah & Bukti Empiris Terverifikasi",
     "scientificStudyDesc": "Fakta dalam ulasan ini diperkuat oleh uji klinis atau eksperimen ilmiah dari lembaga berikut:",
     "wisdomTitle": "Petikan Hikmah & Refleksi Universal",
+    "tags": "Topik Terkait:",
     "share": "Bagikan Berita",
     "relatedArticles": "Berita Terkait",
     "sponsoredContent": "Rekomendasi Terpilih & Mitra",

@@ -5,10 +5,12 @@ export function SourceVerificationBox({
   sources,
   titleText,
   descText,
+  badgeText = "100% Fact-Checked & Attributed",
 }: {
   sources: SourceReference[];
   titleText: string;
   descText: string;
+  badgeText?: string;
 }) {
   return (
     <div className="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-5 sm:p-6 my-8">
@@ -21,7 +23,7 @@ export function SourceVerificationBox({
             {titleText}
           </h3>
           <span className="text-[11px] text-teal-600 dark:text-teal-400 font-semibold tracking-wide uppercase">
-            100% Fact-Checked & Attributed
+            {badgeText}
           </span>
         </div>
       </div>

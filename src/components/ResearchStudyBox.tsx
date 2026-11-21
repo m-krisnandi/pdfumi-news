@@ -25,6 +25,7 @@ export function ResearchStudyBox({
     return field[locale] || field.en || "";
   };
 
+  const titleTextResolved = resolveField(study.title as unknown as string | { id: string; en: string; ja: string } | undefined);
   const keyFindingText = resolveField(study.keyFinding);
   const wisdomText = resolveField(study.contextualWisdom?.text);
   const wisdomSource = resolveField(study.contextualWisdom?.source);
@@ -49,7 +50,7 @@ export function ResearchStudyBox({
         <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-3">{descText}</p>
         <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 p-4">
           <p className="text-xs font-bold text-zinc-900 dark:text-white mb-1.5">
-            &quot;{study.title}&quot;
+            &quot;{titleTextResolved || study.title}&quot;
           </p>
           {study.authors && (
             <p className="text-[11px] text-zinc-500 mb-2">{study.authors}</p>

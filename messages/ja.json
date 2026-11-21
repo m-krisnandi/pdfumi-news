@@ -34,7 +34,14 @@
     "sourcesUnit": "件の情報源",
     "studyIncluded": "学術論文の引用あり",
     "studyBadge": "研究・臨床",
-    "transparencyNote": "著作権法を遵守し、複数の国際通信社から客観的事実を抽出・再構成した変革的報道です。"
+    "transparencyNote": "著作権法を遵守し、複数の国際通信社から客観的事実を抽出・再構成した変革的報道です。",
+    "noArticles": "現在このカテゴリーで公開されている検証済み記事はありません。"
+  },
+  "pagination": {
+    "prev": "前へ",
+    "next": "次へ",
+    "page": "ページ",
+    "of": "/"
   },
   "article": {
     "publishedOn": "公開日時",
@@ -42,9 +49,11 @@
     "keyFinding": "論文・研究の主要な発見:",
     "verifiedSources": "主要情報源とファクトチェック",
     "verifiedSourcesDesc": "この記事は、透明性と著作権の遵守を徹底するため、以下の国際通信社報道から事実を抽出・独自に総合編集したものです。",
+    "factCheckedBadge": "100% 検証済み・公式帰属",
     "scientificStudy": "査読済み学術研究・実証データ",
     "scientificStudyDesc": "本報道の根拠となる臨床試験または査読済み研究論文：",
     "wisdomTitle": "教養と普遍的考察",
+    "tags": "関連タグ:",
     "share": "記事を共有",
     "relatedArticles": "関連記事",
     "sponsoredContent": "注目の関連記事・スポンサー",

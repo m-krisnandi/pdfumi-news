@@ -6,6 +6,7 @@ import { GetNewsUseCase } from "@/application/use-cases/get-news.usecase";
 import { CATEGORIES_META, ArticleCategory } from "@/domain/entities/article";
 import { ArticleCard } from "@/components/ArticleCard";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
+import { Pagination } from "@/components/Pagination";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "lucide-react";
 
@@ -34,10 +35,13 @@ export async function generateMetadata({
 
 export default async function CategoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; category: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { locale, category } = await params;
+  const { page } = await searchParams;
   setRequestLocale(locale);
 
   const catMeta = CATEGORIES_META[category as ArticleCategory];
@@ -46,6 +50,7 @@ export default async function CategoryPage({
   }
 
   const tHome = await getTranslations({ locale, namespace: "home" });
+  const tPag = await getTranslations({ locale, namespace: "pagination" });
   const catName = catMeta.name[locale as Locale] || catMeta.name.en;
   const catDesc = catMeta.description[locale as Locale] || catMeta.description.en;
 
@@ -54,6 +59,12 @@ export default async function CategoryPage({
     category: category as ArticleCategory,
     locale: locale as Locale,
   });
+
+  const currentPage = Math.max(1, parseInt(page || "1", 10) || 1);
+  const PAGE_SIZE = 6;
+  const totalPages = Math.max(1, Math.ceil(articles.length / PAGE_SIZE));
+  const startIdx = (currentPage - 1) * PAGE_SIZE;
+  const paginatedArticles = articles.slice(startIdx, startIdx + PAGE_SIZE);
 
   return (
     <div className="space-y-8 pb-12">
@@ -75,20 +86,32 @@ export default async function CategoryPage({
 
       {articles.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800 p-12 text-center text-sm text-zinc-500">
-          Belum ada laporan terverifikasi pada kategori ini untuk wilayah bahasa yang dipilih.
+          {tHome("noArticles")}
         </div>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              article={article}
-              locale={locale as Locale}
-              readText={tHome("readArticle")}
-              minReadText={tHome("minRead")}
-            />
-          ))}
-        </div>
+        <>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {paginatedArticles.map((article) => (
+              <ArticleCard
+                key={article.id}
+                article={article}
+                locale={locale as Locale}
+                readText={tHome("readArticle")}
+                minReadText={tHome("minRead")}
+              />
+            ))}
+          </div>
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath={`/${category}`}
+            prevText={tPag("prev")}
+            nextText={tPag("next")}
+            pageText={tPag("page")}
+            ofText={tPag("of")}
+          />
+        </>
       )}
 
       {/* In-category AdSense placement */}

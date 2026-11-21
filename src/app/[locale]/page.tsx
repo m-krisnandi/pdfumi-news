@@ -4,6 +4,7 @@ import { articleRepository } from "@/infrastructure/repositories/json-article.re
 import { GetNewsUseCase } from "@/application/use-cases/get-news.usecase";
 import { ArticleCard } from "@/components/ArticleCard";
 import { AdSensePlaceholder } from "@/components/AdSensePlaceholder";
+import { Pagination } from "@/components/Pagination";
 import { Flame, BookOpen, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -42,21 +43,37 @@ export async function generateMetadata({
 
 export default async function HomePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { locale } = await params;
+  const { page } = await searchParams;
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "home" });
+  const tPag = await getTranslations({ locale, namespace: "pagination" });
   const newsUseCase = new GetNewsUseCase(articleRepository);
 
   const articles = await newsUseCase.executeFeed({
     locale: locale as Locale,
   });
 
-  const leadArticle = articles[0];
-  const sideArticles = articles.slice(1);
+  const currentPage = Math.max(1, parseInt(page || "1", 10) || 1);
+  const PAGE_SIZE = 6;
+
+  // On page 1, lead article is featured prominently.
+  // Grid displays subsequent 6 items.
+  // On page > 1, grid displays items cleanly without repeating lead banner.
+  const isFirstPage = currentPage === 1;
+  const leadArticle = isFirstPage ? articles[0] : null;
+
+  const nonLeadArticles = articles.slice(1);
+  const totalPages = Math.max(1, Math.ceil(nonLeadArticles.length / PAGE_SIZE));
+
+  const startIdx = (currentPage - 1) * PAGE_SIZE;
+  const sideArticles = nonLeadArticles.slice(startIdx, startIdx + PAGE_SIZE);
 
   const leadContent = leadArticle
     ? leadArticle.translations[locale as Locale] || leadArticle.translations.en
@@ -64,7 +81,7 @@ export default async function HomePage({
 
   return (
     <div className="space-y-10 sm:space-y-12 pb-12">
-      {/* Lead Story Hero Layout — Entire Card Clickable */}
+      {/* Lead Story Hero Layout — Entire Card Clickable (Page 1 Only) */}
       {leadArticle && leadContent && (
         <section className="group relative grid gap-8 lg:grid-cols-12 items-center rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-6 sm:p-8 overflow-hidden shadow-xs hover:shadow-md hover:border-teal-500/40 transition-all cursor-pointer">
           {/* Full-Card Clickable Link Overlay */}
@@ -129,24 +146,40 @@ export default async function HomePage({
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-4">
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
-            {t("latestTitle")}
+            {t("latestTitle")} {currentPage > 1 && <span className="text-sm font-normal text-zinc-500">({tPag("page")} {currentPage})</span>}
           </h2>
           <p className="text-xs text-zinc-500 mt-0.5">
             {t("latestSubtitle")}
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sideArticles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              article={article}
-              locale={locale as Locale}
-              readText={t("readArticle")}
-              minReadText={t("minRead")}
-            />
-          ))}
-        </div>
+        {sideArticles.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {sideArticles.map((article) => (
+              <ArticleCard
+                key={article.id}
+                article={article}
+                locale={locale as Locale}
+                readText={t("readArticle")}
+                minReadText={t("minRead")}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800 p-10 text-center text-sm text-zinc-500">
+            {t("noArticles")}
+          </div>
+        )}
+
+        {/* Numbered Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          prevText={tPag("prev")}
+          nextText={tPag("next")}
+          pageText={tPag("page")}
+          ofText={tPag("of")}
+        />
       </section>
 
       {/* Mid Feed In-Article AdSense Slot (Non-Intrusive) */}

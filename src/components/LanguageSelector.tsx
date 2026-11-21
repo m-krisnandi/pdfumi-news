@@ -9,6 +9,9 @@ export function LanguageSelector({ currentLocale }: { currentLocale: Locale }) {
   const pathname = usePathname();
 
   function onSelectChange(nextLocale: Locale) {
+    if (typeof document !== "undefined") {
+      document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=Lax`;
+    }
     router.replace(pathname, { locale: nextLocale });
   }
 
