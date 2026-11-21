@@ -19,7 +19,6 @@ import {
   Sparkles,
   ShieldAlert,
   Bot,
-  BarChart3,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -167,47 +166,6 @@ export default async function AdminDashboardPage({
             {avgReadingTime} <span className="text-base font-normal text-zinc-500">min</span>
           </div>
           <p className="mt-1.5 text-[11px] text-zinc-500 leading-normal">{t("avgReadingTimeSub")}</p>
-        </div>
-      </div>
-
-      {/* Rincian & Distribusi Tayangan per Artikel */}
-      <div className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 space-y-4 shadow-2xs">
-        <div className="flex items-center justify-between">
-          <h2 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-            <BarChart3 className="h-4 w-4 text-teal-600" />
-            <span>Rincian Sumber Tayangan ({totalViews} Total Views)</span>
-          </h2>
-          <span className="text-xs font-semibold text-zinc-500">
-            {published.length} Artikel Terbit
-          </span>
-        </div>
-
-        <div className="space-y-3 pt-1">
-          {published.map((art) => {
-            const tr = art.translations[locale as Locale] || art.translations.en;
-            const views = art.viewCount || 0;
-            const percentage = totalViews > 0 ? ((views / totalViews) * 100).toFixed(1) : "0";
-
-            return (
-              <div key={art.id} className="space-y-1.5">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-zinc-800 dark:text-zinc-200 line-clamp-1 max-w-lg">
-                    {tr.title}
-                  </span>
-                  <div className="flex items-center gap-2 shrink-0 font-mono">
-                    <span className="font-bold text-teal-600 dark:text-teal-400">{views} views</span>
-                    <span className="text-zinc-400">({percentage}%)</span>
-                  </div>
-                </div>
-                <div className="h-2 w-full rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-teal-500 transition-all duration-500"
-                    style={{ width: `${percentage}%` }}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
