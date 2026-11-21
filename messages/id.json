@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "siteName": "Pdfumi Global News",
+    "tagline": "Jendela Berita Dunia & Riset Terverifikasi",
+    "description": "Portal kurasi berita internasional terpercaya, sintesis multi-sumber, dan kajian riset sains berbasis fakta."
+  },
+  "nav": {
+    "home": "Beranda",
+    "allNews": "Semua Berita",
+    "backToPdfumi": "Alat PDFumi",
+    "categories": "Kategori",
+    "about": "Tentang Kami",
+    "editorial": "Pedoman Editorial",
+    "privacy": "Kebijakan Privasi"
+  },
+  "home": {
+    "breaking": "SOROTAN DUNIA",
+    "featuredTitle": "Berita Utama Terverifikasi",
+    "latestTitle": "Laporan Terbaru & Analisis",
+    "viewAll": "Lihat Semua",
+    "readArticle": "Baca Selengkapnya",
+    "minRead": "menit baca",
+    "sourcesCount": "sumber terverifikasi",
+    "studyIncluded": "Disertai Riset Ilmiah",
+    "transparencyNote": "Disintesis dari minimal 2-3 kantor berita resmi internasional dengan standar jurnalistik bebas hoaks."
+  },
+  "article": {
+    "publishedOn": "Dipublikasikan pada",
+    "category": "Kategori",
+    "verifiedSources": "Sumber Berita & Verifikasi Fakta",
+    "verifiedSourcesDesc": "Artikel ini merupakan hasil sintesis transformatif dari kantor berita dan dokumen resmi berikut demi menjamin akurasi dan kepatuhan hak cipta.",
+    "scientificStudy": "Kajian Riset & Data Ilmiah",
+    "scientificStudyDesc": "Temuan fakta dalam artikel ini diperkuat oleh publikasi akademis dan uji klinis berikut:",
+    "wisdomTitle": "Hikmah & Renungan Kontekstual",
+    "share": "Bagikan Berita",
+    "relatedArticles": "Berita Terkait",
+    "sponsoredContent": "Sponsor & Rekomendasi Terpilih",
+    "backToFeed": "Kembali ke Beranda"
+  },
+  "footer": {
+    "copyright": "Pdfumi News Network. Seluruh hak cipta dilindungi undang-undang.",
+    "disclaimer": "Informasi disajikan untuk tujuan edukasi dan wawasan global. Seluruh kutipan fakta dan data mencantumkan sumber asli yang sah.",
+    "mainTools": "Kembali ke PDF Tools Utama"
+  }
+}

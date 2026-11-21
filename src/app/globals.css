@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
+  body {
+    background-color: #fafafa;
+    color: #18181b;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .dark body {
+    background-color: #09090b;
+    color: #f4f4f5;
+  }
+}
+
+/* Swiss typography styling */
+.editorial-headline {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

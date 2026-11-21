@@ -1,0 +1,239 @@
+[
+  {
+    "id": "art-001",
+    "slug": "ai-quantum-chips-breakthrough-2026",
+    "category": "tech-ai",
+    "status": "published",
+    "featured": true,
+    "coverImage": {
+      "url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "alt": "Quantum Processing Unit Architecture",
+      "caption": "Silikon Quantum AI Generasi Baru dalam Uji Laboratorium Terbuka",
+      "credit": "Science Photo Lab / Unsplash"
+    },
+    "sources": [
+      {
+        "name": "MIT Technology Review",
+        "url": "https://technologyreview.com",
+        "publisher": "MIT Press",
+        "publishedAt": "2026-11-19T14:00:00Z",
+        "isPrimary": true,
+        "credibilityScore": 98
+      },
+      {
+        "name": "Reuters Global Technology",
+        "url": "https://reuters.com/technology",
+        "publisher": "Thomson Reuters",
+        "publishedAt": "2026-11-20T02:30:00Z",
+        "isPrimary": false,
+        "credibilityScore": 96
+      },
+      {
+        "name": "NHK World News Tech",
+        "url": "https://www3.nhk.or.jp/nhkworld/en/news/",
+        "publisher": "NHK Japan",
+        "publishedAt": "2026-11-20T08:15:00Z",
+        "isPrimary": false,
+        "credibilityScore": 95
+      }
+    ],
+    "researchStudy": {
+      "title": "Room-Temperature Coherent Spin Modulation in Monolithic Quantum Silicon",
+      "authors": "Dr. Kenjiro Takahashi, Dr. Sarah Jenkins et al.",
+      "institutionOrJournal": "Nature Quantum Information & RIKEN Institute",
+      "year": 2026,
+      "url": "https://nature.com",
+      "keyFinding": "Efisiensi komputasi neural network melonjak 320x lipat dengan konsumsi daya listrik 90% lebih rendah dibanding akselerator AI konvensional berbasis HBM.",
+      "contextualWisdom": {
+        "text": "Dan Dia mengajarkan kepada manusia apa yang tidak diketahuinya.",
+        "source": "QS. Al-'Alaq: 5",
+        "reflection": "Kemajuan sains membuktikan potensi akal manusia dalam membuka tabir hukum alam semesta demi kemaslahatan bersama."
+      }
+    },
+    "translations": {
+      "id": {
+        "title": "Lompatan Komputasi Kuantum 2026: Chip AI Generasi Baru Hemat Daya 90%",
+        "summary": "Konsorsium riset global berhasil menguji arsitektur prosesor hibrida kuantum-silikon yang memangkas kebutuhan energi pusat data AI secara drastis.",
+        "content": "Pusat data kecerdasan buatan (*AI data centers*) selama ini menghadapi tantangan terbesar pada lonjakan konsumsi daya listrik. Pekan ini, laporan gabungan dari MIT Technology Review, Reuters, dan NHK mengonfirmasi keberhasilan uji coba chip hibrida kuantum yang memecahkan rekor efisiensi energi global.\n\n### Mengapa Terobosan Ini Menjadi Sorotan Dunia?\nSecara arsitektural, prosesor konvensional membutuhkan pendingin raksasa untuk memproses miliaran parameter model bahasa besar (LLM). Dengan teknik modulasi putaran elektron (*coherent spin modulation*) pada silikon murni, beban komputasi matriks tensor dapat dialihkan ke level sub-atomik tanpa menghasilkan panas berlebih.\n\n### Hasil Kajian Ilmiah\nBerdasarkan studi independen yang diterbitkan di *Nature Quantum Information*, chip ini mencatat peningkatan throughput kalkulasi hingga 320 kali lipat. Temuan ini menandai babak baru transisi komputasi ramah lingkungan bagi industri teknologi global.",
+        "seoTitle": "Lompatan Komputasi Kuantum 2026: Chip AI Baru Hemat Daya 90%",
+        "seoDescription": "Riset global konfirmasi chip kuantum silikon hemat daya 90% untuk pusat data AI. Analisis mendalam dari Reuters, MIT, dan NHK.",
+        "tags": ["AI", "Kuantum", "Teknologi", "Inovasi", "Sains"],
+        "readingTimeMinutes": 4
+      },
+      "en": {
+        "title": "Quantum Computing Leap 2026: Next-Gen AI Silicon Slashes Energy by 90%",
+        "summary": "A global research consortium has demonstrated hybrid quantum-silicon processors that solve the AI datacenter power crisis while accelerating neural throughput.",
+        "content": "Artificial intelligence data centers have reached a critical energy bottleneck. Verified reports from MIT Technology Review, Reuters, and NHK confirm that researchers have achieved stable room-temperature spin modulation on commercial silicon substrates.\n\n### Why This Breakthrough Matters\nConventional AI accelerators generate massive thermal footprints while computing matrix multiplications. By delegating probabilistic tensor operations to quantum state coherency, the system eliminates traditional resistive energy loss.\n\n### Peer-Reviewed Verification\nPublished in *Nature Quantum Information*, the joint findings verify a 320-fold boost in parallel processing efficiency with 90% lower power draw, paving the way for sustainable global AI scaling.",
+        "seoTitle": "Quantum Computing 2026: Next-Gen AI Silicon Slashes Energy by 90%",
+        "seoDescription": "Global verification of room-temperature quantum silicon chips cutting AI energy demands. Multi-source analysis from MIT, Reuters, and NHK.",
+        "tags": ["Artificial Intelligence", "Quantum Chips", "Hardware", "Green Tech"],
+        "readingTimeMinutes": 4
+      },
+      "ja": {
+        "title": "2026年の量子計算革命：AIデータセンターの消費電力を90%削減する新チップ実証",
+        "summary": "国際共同研究チームが、シリコン基板上での室温量子スピン制御に成功。AI処理の電力危機を解決するブレイクスルーを達成しました。",
+        "content": "生成AIの急速な普及に伴うデータセンターの電力消費問題に対し、画期的な解決策が示されました。MITテクノロジーレビュー、ロイター、NHKの報道によると、室温下で安定動作する量子ハイブリッドシリコンプロセッサの実証実験が完了しました。\n\n### なぜこの技術が注目されるのか\n従来のGPU型アクセラレータは高熱を放出し莫大な冷却電力を必要としていましたが、本技術は電子スピンのコヒーレント制御を用いることで、発熱を極小化しつつ並列演算能力を飛躍的に高めています。\n\n### 学術誌『ネイチャー』での検証\n査読付き論文において、演算効率が従来の320倍に向上し、消費電力が90%低減することが第三者機関によって確認されました。",
+        "seoTitle": "2026年量子AIチップ実証：消費電力90%削減の新時代へ",
+        "seoDescription": "国際研究チームが室温量子ハイブリッドシリコンの実証に成功。ロイター、MIT、NHKによる多角的な検証レポート。",
+        "tags": ["量子コンピューティング", "人工知能", "半導体", "省エネ技術"],
+        "readingTimeMinutes": 4
+      }
+    },
+    "scheduledAt": "2026-11-20T07:00:00Z",
+    "publishedAt": "2026-11-20T07:00:00Z",
+    "viewCount": 3840,
+    "createdAt": "2026-11-20T06:30:00Z",
+    "updatedAt": "2026-11-20T07:00:00Z"
+  },
+  {
+    "id": "art-002",
+    "slug": "fasting-cellular-autophagy-longevity-study",
+    "category": "health-wellness",
+    "status": "published",
+    "featured": true,
+    "coverImage": {
+      "url": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
+      "alt": "Wellness and Cellular Vitality",
+      "caption": "Mekanisme Pembersihan Seluler (Autophagy) dalam Gaya Hidup Seimbang",
+      "credit": "Health Vitality / Unsplash"
+    },
+    "sources": [
+      {
+        "name": "The Lancet Healthy Longevity",
+        "url": "https://thelancet.com/healthy-longevity",
+        "publisher": "Elsevier",
+        "publishedAt": "2026-11-18T10:00:00Z",
+        "isPrimary": true,
+        "credibilityScore": 99
+      },
+      {
+        "name": "World Health Organization (WHO) Bulletin",
+        "url": "https://who.int",
+        "publisher": "United Nations",
+        "publishedAt": "2026-11-19T06:00:00Z",
+        "isPrimary": false,
+        "credibilityScore": 97
+      },
+      {
+        "name": "PubMed Central Clinical Trials",
+        "url": "https://ncbi.nlm.nih.gov/pmc",
+        "publisher": "National Institutes of Health",
+        "publishedAt": "2026-11-19T12:00:00Z",
+        "isPrimary": false,
+        "credibilityScore": 99
+      }
+    ],
+    "researchStudy": {
+      "title": "Time-Restricted Feeding and Intermittent Autophagic Renewal: A 5-Year Multi-Cohort Trial",
+      "authors": "Prof. David Sinclair, Dr. Amina Nur, Dr. Kenichi Sato",
+      "institutionOrJournal": "The Lancet Healthy Longevity & Karolinska Institute",
+      "year": 2026,
+      "url": "https://thelancet.com",
+      "keyFinding": "Pola puasa teratur 14-16 jam menurunkan penanda inflamasi sistemik (hs-CRP) sebesar 42% dan meningkatkan daur ulang mitokondria yang rusak (mitofagi).",
+      "contextualWisdom": {
+        "text": "Dan berpuasa itu lebih baik bagimu jika kamu mengetahui.",
+        "source": "QS. Al-Baqarah: 184",
+        "reflection": "Ajaran berpuasa yang telah diwariskan ribuan tahun terbukti selaras dengan mekanisme biologis pemulihan seluler tubuh manusia."
+      }
+    },
+    "translations": {
+      "id": {
+        "title": "Riset Lancet 5 Tahun Buktikan Manfaat Puasa Berkala terhadap Peremajaan Sel",
+        "summary": "Uji klinis multi-negara selama lima tahun mengonfirmasi bahwa puasa berkala mengaktifkan mekanisme autofagi yang memperlambat penuaan biologis.",
+        "content": "Praktik puasa berkala (*intermittent fasting*) kini bukan sekadar tren gaya hidup, melainkan terapi preventif yang diakui komunitas medis global. Hasil studi jangka panjang yang dipublikasikan di *The Lancet Healthy Longevity* membuktikan pembersihan sel tubuh secara mandiri saat jeda makan.\n\n### Mekanisme Autofagi Seluler\nKetika tubuh tidak menerima asupan kalori selama 12 hingga 16 jam, kadar insulin menurun dan sel mengaktifkan proses *autophagy*—yakni mendaur ulang protein rusak dan mitokondria yang telah usang. Hal ini mencegah inflamasi kronis yang menjadi akar penyakit kardiovaskular.\n\n### Harmoni Sains dan Nilai Luhur\nMenariknya, temuan modern ini menegaskan keutamaan puasa yang telah lama diajarkan dalam tradisi spiritual dan kearifan klasik. Keseimbangan antara menahan diri dan konsumsi nutrisi alami terbukti menjadi formula optimal kesehatan tubuh manusia.",
+        "seoTitle": "Riset Lancet: Manfaat Puasa Teratur Perbaiki Sel & Redakan Inflamasi",
+        "seoDescription": "Studi klinis Lancet & WHO buktikan puasa berkala 14-16 jam aktifkan autofagi dan turunkan penanda inflamasi 42%.",
+        "tags": ["Kesehatan", "Puasa", "Autofagi", "Riset Medis", "Panjang Umur"],
+        "readingTimeMinutes": 5
+      },
+      "en": {
+        "title": "5-Year Lancet Cohort Confirms Fasting Triggers Deep Cellular Renewal",
+        "summary": "A comprehensive multi-cohort trial published in The Lancet verifies that time-restricted fasting stimulates autophagic recycling and mitigates systemic inflammation.",
+        "content": "Intermittent fasting has transitioned from lifestyle discourse into evidence-based preventative medicine. A rigorous 5-year study across international cohorts published in *The Lancet Healthy Longevity* reveals concrete biological markers of cellular renewal.\n\n### The Science of Autophagic Clearance\nDeprived of exogenous caloric input for 14-16 hours, cellular metabolisms switch from growth to defense mode. The body cleanses dysfunctional organelles and misfolded proteins through autophagy, lowering systemic hs-CRP inflammation markers by over 40%.\n\n### Convergence with Ancient Wisdom\nThese empirical medical insights reflect long-standing human traditions that observe periodic fasting as an instrument of bodily harmony and mental clarity.",
+        "seoTitle": "Lancet Study: Fasting Activates Cellular Autophagy & Lowers Inflammation",
+        "seoDescription": "5-year clinical study confirms intermittent fasting boosts mitochondrial renewal and longevity biomarkers. Full research synthesis.",
+        "tags": ["Health", "Fasting", "Autophagy", "Longevity", "Clinical Trials"],
+        "readingTimeMinutes": 5
+      },
+      "ja": {
+        "title": "英ランセット誌5年追跡調査：断食が導く細胞オートファジーと健康寿命の延伸",
+        "summary": "世界複数拠点で実施された5年間の臨床試験により、定期的なファスティングが細胞の自食作用（オートファジー）を活性化させることが証明されました。",
+        "content": "医学界で最も権威ある学術誌の一つ『ランセット（The Lancet Healthy Longevity）』に掲載された最新研究により、14〜16時間の空腹時間がもたらす生体防御機能の全容が明らかになりました。\n\n### オートファジーによる細胞内浄化\n食事摂取を一定時間控えることで、体内の細胞は古いタンパク質や機能低下したミトコンドリアを分解・再利用する「オートファジー」を開始します。これにより慢性炎症リスクが大幅に低減します。\n\n### 伝統的な知恵と現代科学の融合\n古来より様々な文化圏で実践されてきた断食の習慣が、最先端の分子生物学によってその正当性を裏付けられた形となります。",
+        "seoTitle": "ランセット最新研究：断食（ファスティング）が促す細胞の再生メカニズム",
+        "seoDescription": "5年間の国際追跡調査が明かす断食と抗炎症作用。WHOおよびランセットの検証データに基づく解説記事。",
+        "tags": ["健康医学", "ファスティング", "オートファジー", "予防医療"],
+        "readingTimeMinutes": 5
+      }
+    },
+    "scheduledAt": "2026-11-20T12:30:00Z",
+    "publishedAt": "2026-11-20T12:30:00Z",
+    "viewCount": 5120,
+    "createdAt": "2026-11-20T11:45:00Z",
+    "updatedAt": "2026-11-20T12:30:00Z"
+  },
+  {
+    "id": "art-003",
+    "slug": "global-fintech-instant-cross-border-settlements",
+    "category": "global-economy",
+    "status": "published",
+    "featured": false,
+    "coverImage": {
+      "url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      "alt": "Global Financial Interconnection",
+      "caption": "Infrastruktur Pembayaran Antarnegara Tanpa Hambatan",
+      "credit": "Fintech Today / Unsplash"
+    },
+    "sources": [
+      {
+        "name": "Financial Times",
+        "url": "https://ft.com",
+        "publisher": "Nikkei Group",
+        "publishedAt": "2026-11-20T04:00:00Z",
+        "isPrimary": true,
+        "credibilityScore": 97
+      },
+      {
+        "name": "Bank for International Settlements (BIS) Quarterly",
+        "url": "https://bis.org",
+        "publisher": "BIS Basel",
+        "publishedAt": "2026-11-19T18:00:00Z",
+        "isPrimary": false,
+        "credibilityScore": 99
+      }
+    ],
+    "translations": {
+      "id": {
+        "title": "Koridor Pembayaran Lintas Batas Instan ASEAN-Jepang Resmi Beroperasi Penuh",
+        "summary": "Integrasi sistem QR dan pembayaran antarbank regional memangkas biaya remitansi UMKM dan mempercepat transaksi perdagangan tanpa perantara valuta pihak ketiga.",
+        "content": "Integrasi jaringan pembayaran bilateral antara bank sentral di kawasan Asia Tenggara dan Jepang kini mencapai tonggak sejarah baru. Mengutip data Financial Times dan Bank for International Settlements (BIS), sistem penyelesaian lokal (*local currency settlement*) kini berjalan secara *real-time* dalam hitungan detik.\n\n### Manfaat Nyata Bagi Pelaku Usaha Kecil\nSebelumnya, transaksi ekspor-impor skala mikro membutuhkan waktu 2-3 hari kerja dengan biaya koresponden bank yang cukup memberatkan. Sistem baru ini memungkinkan konversi langsung mata uang lokal tanpa konversi ganda ke Dolar AS, menghemat biaya hingga 60%.",
+        "seoTitle": "Pembayaran Lintas Batas ASEAN-Jepang Resmi Beroperasi Real-Time",
+        "seoDescription": "Sistem pembayaran langsung QR dan perbankan ASEAN-Jepang pangkas biaya remitansi UMKM hingga 60%. Laporan BIS & FT.",
+        "tags": ["Fintech", "Ekonomi", "Perbankan", "Bisnis", "Perdagangan"],
+        "readingTimeMinutes": 3
+      },
+      "en": {
+        "title": "ASEAN-Japan Real-Time Cross-Border Payment Highway Fully Operational",
+        "summary": "Direct bilateral currency corridors eliminate intermediary fees, allowing regional businesses and individuals to transfer funds instantaneously.",
+        "content": "Central bank collaborations across Southeast Asia and Japan have achieved full real-time operational status for cross-border retail and commercial payments. According to reports from the Financial Times and the Bank for International Settlements (BIS), multilateral settlements now execute within seconds.\n\n### Slashing Costs for Global SMEs\nBy bypassing intermediary multi-hop correspondent banks and eliminating redundant dollar conversions, cross-border remittance overheads have dropped by over 60%, fostering direct intra-regional commerce.",
+        "seoTitle": "ASEAN-Japan Instant Cross-Border Payment System Launched",
+        "seoDescription": "Direct currency settlement corridors lower transfer costs by 60% for regional trade. Analysis from BIS and Financial Times.",
+        "tags": ["Fintech", "Economy", "Banking", "Global Trade"],
+        "readingTimeMinutes": 3
+      },
+      "ja": {
+        "title": "ASEAN・日本間の即時クロスボーダー決済網が全面稼働：送金コストを最大60%削減",
+        "summary": "二国間中央銀行ネットワークの統合により、中小企業や個人向け送金が数秒で完了。米ドルを介さない自国通貨建て決済が実現しました。",
+        "content": "日本銀行および東南アジア主要国の中央銀行による即時国境を越えた送金ネットワークが正式に稼働しました。フィナンシャル・タイムズおよび国際決済銀行（BIS）の報告によると、QR決済および口座間送金がリアルタイムで決済されます。\n\n### 中小貿易企業への恩恵\nこれまで数日を要していた海外送金が即時化され、中継銀行手数料が排除されたことで、取引コストは従来比で最大60%圧縮されました。",
+        "seoTitle": "日本・ASEAN即時国際決済ネットワーク本格稼働：送金改革",
+        "seoDescription": "BISおよびFT報道による日本・ASEANクロスボーダー決済の解説。現地通貨直結で手数料大幅減。",
+        "tags": ["フィンテック", "世界経済", "為替決済", "国際貿易"],
+        "readingTimeMinutes": 3
+      }
+    },
+    "scheduledAt": "2026-11-20T19:30:00Z",
+    "publishedAt": "2026-11-20T19:30:00Z",
+    "viewCount": 2980,
+    "createdAt": "2026-11-20T18:00:00Z",
+    "updatedAt": "2026-11-20T19:30:00Z"
+  }
+]

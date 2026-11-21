@@ -1,0 +1,23 @@
+services:
+  news-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pdfumi-news-web
+    restart: unless-stopped
+    ports:
+      - "3008:3008"
+    environment:
+      NODE_ENV: production
+      PORT: 3008
+      NEXT_PUBLIC_SITE_URL: https://news.pdfumi.com
+      CRON_SECRET: ${CRON_SECRET:-pdfumi-news-secure-cron-2026}
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
