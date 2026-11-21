@@ -1,5 +1,6 @@
 import { Locale } from "@/i18n/config";
 import { Newspaper, ExternalLink } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 export function Footer({
   locale,
@@ -50,18 +51,21 @@ export function Footer({
               <span>{mainToolsText}</span>
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
-            <a href={`https://pdfumi.com/${locale}/about`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
+            <Link href="/about" className="hover:text-teal-600 transition">
               {aboutText}
-            </a>
-            <a href={`https://pdfumi.com/${locale}/contact`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
+            </Link>
+            <Link href="/contact" className="hover:text-teal-600 transition">
               {contactText}
-            </a>
-            <a href={`https://pdfumi.com/${locale}/editorial-guidelines`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
+            </Link>
+            <Link href="/editorial-guidelines" className="hover:text-teal-600 transition">
               {editorialText}
-            </a>
-            <a href={`https://pdfumi.com/${locale}/privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition">
+            </Link>
+            <Link href="/privacy" className="hover:text-teal-600 transition">
               {privacyText}
-            </a>
+            </Link>
+            <Link href="/terms" className="hover:text-teal-600 transition">
+              {locale === "ja" ? "利用規約" : locale === "id" ? "Ketentuan Layanan" : "Terms"}
+            </Link>
           </div>
         </div>
 
